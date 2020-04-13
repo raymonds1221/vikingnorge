@@ -1,0 +1,571 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:layout_marginBottom="50dp"
+    android:orientation="vertical">
+    <ViewFlipper android:id="@+id/car_event_main_flipper"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+		<ViewFlipper android:id="@+id/car_events_flipper"
+		    android:layout_width="fill_parent"
+		    android:layout_height="fill_parent">
+		    
+		    <LinearLayout 
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:orientation="vertical">
+		        <TextView
+				    android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_marginLeft="20dp"
+					android:layout_marginTop="20dp"
+					android:layout_marginBottom="10dp"
+					android:text="Her kan du lage en oversikt over alle filer du trenger i sammenheng med bilen din. Hver kategori kan inneholde flere bilder."
+					android:textSize="15dp"
+					android:textColor="#FFFFFF" />
+				<TextView
+				    android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_marginLeft="20dp"
+					android:text="Dra fingeren over feltet for å slette"
+					android:textSize="15dp"
+					android:textColor="#FFFFFF" />
+		        <LinearLayout
+				    android:layout_width="fill_parent"
+				    android:layout_height="wrap_content"
+				    android:orientation="horizontal"
+				    android:background="@drawable/slot">"
+				    <ImageView
+						android:src="@drawable/events_icon" 
+						android:background="#00000000"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_marginLeft="25dp"
+						android:layout_gravity="center"/>
+				    <TextView  
+						android:layout_width="fill_parent" 
+						android:layout_height="wrap_content"
+						android:layout_weight="1" 
+						android:layout_marginLeft="20dp"
+						android:layout_gravity="center_vertical"
+						android:text="Legg til ny"
+						android:textSize="21dp"
+						android:textColor="#404040" />
+				    <ImageButton
+						android:id="@+id/add_new_event_btn"
+						android:src="@drawable/save_btn" 
+						android:background="#00000000"
+						android:layout_width="40dp"
+						android:layout_height="wrap_content"
+						android:layout_gravity="center"/>
+				</LinearLayout>
+				<TextView 
+					    android:id="@+id/mycar_files_bar"
+					    android:layout_width="fill_parent"
+					    android:layout_height="wrap_content"
+					    android:background="@drawable/description_bar"
+					    android:text="HENDELSES ARKIV"
+						android:textSize="15dp"
+						android:textColor="#FFFFFFFF"
+						android:paddingLeft="10dp"/>
+				<ViewFlipper android:id="@+id/mycar_events_list_flipper"
+				    android:layout_width="fill_parent"
+				    android:layout_height="wrap_content">
+				    <ListView android:id="@+id/events_list"
+					    android:layout_width="fill_parent"
+			            android:layout_height="wrap_content"
+			            android:cacheColorHint="#00000000"/>
+				    <RelativeLayout
+				        android:layout_width="fill_parent"
+				        android:layout_height="fill_parent">
+				        <ProgressBar
+				            android:layout_width="wrap_content"
+				            android:layout_height="wrap_content"
+				            android:layout_centerInParent="true"
+				            android:layout_marginTop="60dp"
+				            style="@android:style/Widget.ProgressBar.Small.Inverse" />
+				    </RelativeLayout>
+				</ViewFlipper>
+		    </LinearLayout>
+		    
+		    
+		    <RelativeLayout 
+		        android:layout_width="fill_parent"
+		       	android:layout_height="fill_parent">
+		        <LinearLayout 
+		            android:layout_width="fill_parent"
+		            android:layout_height="wrap_content"
+		            android:orientation="vertical">
+		            <LinearLayout 
+		                android:layout_width="wrap_content"
+		                android:layout_height="wrap_content"
+		                android:layout_gravity="center_horizontal">
+		                <ImageButton android:id="@+id/back_event_menu"
+		                    android:src="@drawable/back_btn"
+		                    android:layout_width="wrap_content"
+		                    android:layout_height="wrap_content"
+		                    android:background="#00000000"
+		                    android:layout_marginRight="8dp" />
+		                <RelativeLayout 
+		                    android:background="@drawable/event_header_bar"
+		                    android:layout_width="wrap_content"
+		                    android:layout_height="wrap_content"
+		                    android:orientation="vertical">
+		                    <TextView android:id="@+id/car_event_name"
+		                        android:layout_width="wrap_content"
+		                        android:layout_height="wrap_content"
+		                        android:textColor="#ffffff"
+		                        android:textSize="12sp"
+		                        android:layout_centerInParent="true"
+		                        android:shadowColor="#606060"
+					        	android:shadowDx="0"
+					        	android:shadowDy="3"
+					        	android:shadowRadius="1" />
+		                </RelativeLayout>
+		            </LinearLayout>
+		            <TextView
+					    android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_margin="20dp"
+						android:text="Her kan du se detaljer for hendelser. Du kan ikke endre på en hendelse som er lagret, men du kan slette den ved å dra fingeren vertikalt over feltet."
+						android:textSize="14sp"
+						android:textColor="#FFFFFF" />
+		        </LinearLayout>
+		        <LinearLayout
+		            android:layout_width="fill_parent"
+		            android:layout_height="wrap_content"
+		            android:layout_alignParentBottom="true"
+		            android:orientation="vertical">
+		            <RelativeLayout android:id="@+id/car_event_informasjon"
+		                android:background="@drawable/slot"
+		                android:layout_width="fill_parent"
+		                android:layout_height="wrap_content">
+		                <ImageView
+		                    android:src="@drawable/info_icon"
+		                    android:layout_width="wrap_content"
+		                    android:layout_height="wrap_content"
+		                    android:layout_centerVertical="true"
+		                    android:layout_marginLeft="15dp"
+		                    android:clickable="false" />
+		                <TextView
+		                    android:layout_width="wrap_content"
+		                    android:layout_height="wrap_content"
+		                    android:text="Informasjon"
+		                    android:textColor="#ffffff"
+		                    android:textSize="20sp"
+		                    android:layout_centerVertical="true"
+		                    android:layout_marginLeft="65dp"
+		                    android:clickable="false" />
+		                <ImageButton
+		                    android:src="@drawable/view_btn"
+		                    android:background="#00000000"
+		                    android:layout_width="wrap_content"
+		                    android:layout_height="wrap_content"
+		                    android:layout_centerVertical="true"
+		                    android:layout_alignParentRight="true"
+		                    android:layout_marginRight="15dp"
+		                    android:clickable="false" />
+		            </RelativeLayout>
+		            <RelativeLayout android:id="@+id/car_event_bilder"
+		                android:background="@drawable/slot"
+		                android:layout_width="fill_parent"
+		                android:layout_height="wrap_content">
+		                <ImageView
+		                    android:src="@drawable/pictures_icon"
+		                    android:layout_width="wrap_content"
+		                    android:layout_height="wrap_content"
+		                    android:layout_centerVertical="true"
+		                    android:layout_marginLeft="15dp"
+		                    android:clickable="false" />
+		                <TextView
+		                    android:layout_width="wrap_content"
+		                    android:layout_height="wrap_content"
+		                    android:text="Bilder"
+		                    android:textColor="#ffffff"
+		                    android:textSize="20sp"
+		                    android:layout_centerVertical="true"
+		                    android:layout_marginLeft="65dp"
+		                    android:clickable="false" />
+		                <ImageButton
+		                    android:src="@drawable/view_btn"
+		                    android:background="#00000000"
+		                    android:layout_width="wrap_content"
+		                    android:layout_height="wrap_content"
+		                    android:layout_centerVertical="true"
+		                    android:layout_alignParentRight="true"
+		                    android:layout_marginRight="15dp"
+		                    android:clickable="false" />                
+		            </RelativeLayout>
+		            <RelativeLayout android:id="@+id/car_event_lydopptak"
+		                android:background="@drawable/slot"
+		                android:layout_width="fill_parent"
+		                android:layout_height="wrap_content">
+		                <ImageView
+		                    android:src="@drawable/sound_icon"
+		                    android:layout_width="wrap_content"
+		                    android:layout_height="wrap_content"
+		                    android:layout_centerVertical="true"
+		                    android:layout_marginLeft="15dp"
+		                    android:clickable="false" />
+		                <TextView
+		                    android:layout_width="wrap_content"
+		                    android:layout_height="wrap_content"
+		                    android:text="Lydopptak"
+		                    android:textColor="#ffffff"
+		                    android:textSize="20sp"
+		                    android:layout_centerVertical="true"
+		                    android:layout_marginLeft="65dp"
+		                    android:clickable="false" />
+		                <ImageButton
+		                    android:src="@drawable/view_btn"
+		                    android:background="#00000000"
+		                    android:layout_width="wrap_content"
+		                    android:layout_height="wrap_content"
+		                    android:layout_centerVertical="true"
+		                    android:layout_alignParentRight="true"
+		                    android:layout_marginRight="15dp"
+		                    android:clickable="false" />  	                
+		            </RelativeLayout>
+		        </LinearLayout>
+		    </RelativeLayout>
+		    
+		    <LinearLayout
+		        android:layout_width="fill_parent"
+		        android:layout_height="wrap_content"
+		        android:orientation="vertical">
+		        <LinearLayout
+		            android:layout_width="wrap_content"
+		            android:layout_height="wrap_content"
+		            android:layout_gravity="center_horizontal">
+		            <ImageButton android:id="@+id/abort_informasjon"
+		                android:src="@drawable/event_abort_btn"
+		                android:layout_width="wrap_content"
+		                android:layout_height="wrap_content"
+		                android:background="#00000000"
+		                android:layout_marginRight="8dp" />
+		            <RelativeLayout 
+	                    android:background="@drawable/event_header_bar"
+	                    android:layout_width="wrap_content"
+	                    android:layout_height="wrap_content"
+	                    android:orientation="vertical">
+	                    <TextView
+	                        android:layout_width="wrap_content"
+	                        android:layout_height="wrap_content"
+	                        android:textColor="#ffffff"
+	                        android:text="Informasjon"
+	                        android:textSize="12sp"
+	                        android:layout_centerInParent="true"
+	                        android:shadowColor="#606060"
+				        	android:shadowDx="0"
+				        	android:shadowDy="3"
+				        	android:shadowRadius="1" />
+	                </RelativeLayout>
+		        </LinearLayout>
+		        <View android:layout_width="0dp" android:layout_height="20dp" />
+		        <ScrollView
+		            android:layout_width="fill_parent"
+		            android:layout_height="wrap_content"
+		            android:fadingEdge="none">
+		            <TableLayout
+		                android:layout_width="wrap_content"
+		                android:layout_height="wrap_content"
+		                android:layout_gravity="center_horizontal"
+		                android:layout_marginBottom="15dp">
+		                <TableRow 
+		                    android:layout_marginBottom="10dp">
+		                    <TextView
+		                        android:layout_width="wrap_content"
+		                        android:layout_height="wrap_content"
+		                        android:text="Navn"
+		                        android:textColor="#ffffff"
+		                        android:textSize="15sp"
+		                        android:layout_marginRight="10dp" />
+		                    <EditText android:id="@+id/event_navn_field" 
+		                        android:layout_width="wrap_content"
+		                        android:layout_height="wrap_content"
+		                        android:singleLine="true"
+		                        android:background="@drawable/event_field_selector" />
+		                </TableRow>
+		                <TableRow
+		                    android:layout_marginBottom="10dp">
+		                    <TextView
+		                        android:layout_width="wrap_content"
+		                        android:layout_height="wrap_content"
+		                        android:text="Reg. nr"
+		                        android:textColor="#ffffff"
+		                        android:textSize="15sp"
+		                        android:layout_marginRight="10dp" />
+		                    <EditText android:id="@+id/event_regnr_field" 
+		                        android:layout_width="wrap_content"
+		                        android:layout_height="wrap_content"
+		                        android:singleLine="true"
+		                        android:background="@drawable/event_field_selector" />
+		                </TableRow>
+		                <TableRow
+		                    android:layout_marginBottom="10dp">
+		                    <TextView
+		                        android:layout_width="wrap_content"
+		                        android:layout_height="wrap_content"
+		                        android:text="Hendelse"
+		                        android:textColor="#ffffff"
+		                        android:textSize="15sp"
+		                        android:layout_marginRight="10dp" />
+		                    <EditText android:id="@+id/event_hendelse_field" 
+		                        android:layout_width="wrap_content"
+		                        android:layout_height="wrap_content"
+		                        android:singleLine="true"
+		                        android:background="@drawable/event_field_selector" />
+		                </TableRow>
+		                <TableRow
+		                    android:layout_marginBottom="10dp">
+		                    <TextView
+		                        android:layout_width="wrap_content"
+		                        android:layout_height="wrap_content"
+		                        android:text="Sted"
+		                        android:textColor="#ffffff"
+		                        android:textSize="15sp"
+		                        android:layout_marginRight="10dp" />
+		                    <EditText android:id="@+id/event_sted_field" 
+		                        android:layout_width="wrap_content"
+		                        android:layout_height="wrap_content"
+		                        android:singleLine="true"
+		                        android:background="@drawable/event_field_selector" />
+		                </TableRow>
+		                <TableRow
+		                    android:layout_marginBottom="10dp">
+		                    <TextView
+		                        android:layout_width="wrap_content"
+		                        android:layout_height="wrap_content"
+		                        android:text="Tid/Date"
+		                        android:textColor="#ffffff"
+		                        android:textSize="15sp"
+		                        android:layout_marginRight="10dp" />
+		                    <EditText android:id="@+id/event_datetime_field" 
+		                        android:layout_width="wrap_content"
+		                        android:layout_height="wrap_content"
+		                        android:singleLine="true"
+		                        android:background="@drawable/event_field_selector" />"
+		                </TableRow>
+		                <TableRow
+		                    android:layout_marginBottom="10dp">
+		                    <TextView
+		                        android:layout_width="wrap_content"
+		                        android:layout_height="wrap_content"
+		                        android:text="Notat"
+		                        android:textColor="#ffffff"
+		                        android:textSize="15sp"
+		                        android:layout_marginRight="10dp" />
+		                    <EditText android:id="@+id/event_notat_field" 
+		                        android:layout_width="wrap_content"
+		                        android:layout_height="wrap_content"
+		                        android:background="@drawable/event_field_selector"
+		                        android:maxWidth="170dp"
+		                        android:lines="4"
+		                        android:gravity="top"
+		                        android:scrollbars="vertical" />
+		                </TableRow>
+		                <TableRow>
+		                    <RelativeLayout 
+				                android:layout_width="fill_parent"
+				                android:layout_height="wrap_content"
+				                android:layout_span="2">
+				                <ImageButton
+				                    android:id="@+id/prev_informasjon_btn"
+				                    android:src="@drawable/prev_btn"
+				                    android:layout_width="wrap_content"
+				                    android:layout_height="wrap_content"
+				                    android:background="#00000000" />
+				                <ImageButton
+				                    android:id="@+id/next_informasjon_btn"
+				                    android:src="@drawable/next_btn"
+				                    android:layout_width="wrap_content"
+				                    android:layout_height="wrap_content"
+				                    android:background="#00000000"
+				                    android:layout_alignParentRight="true" />
+				            </RelativeLayout>
+		                </TableRow>
+		            </TableLayout>
+		        </ScrollView>
+	            
+		    </LinearLayout>
+		    
+		    <RelativeLayout
+		        android:layout_width="fill_parent"
+		        android:layout_height="wrap_content"
+		        android:orientation="vertical">
+		        <LinearLayout
+		            android:layout_width="wrap_content"
+		            android:layout_height="wrap_content"
+		            android:layout_centerHorizontal="true">
+		            <ImageButton android:id="@+id/abort_bilder"
+		                android:src="@drawable/event_abort_btn"
+		                android:layout_width="wrap_content"
+		                android:layout_height="wrap_content"
+		                android:background="#00000000"
+		                android:layout_marginRight="8dp" />
+		            <RelativeLayout 
+	                    android:background="@drawable/event_header_bar"
+	                    android:layout_width="wrap_content"
+	                    android:layout_height="wrap_content"
+	                    android:orientation="vertical">
+	                    <TextView
+	                        android:layout_width="wrap_content"
+	                        android:layout_height="wrap_content"
+	                        android:textColor="#ffffff"
+	                        android:text="Bilder"
+	                        android:textSize="12sp"
+	                        android:layout_centerInParent="true"
+	                        android:shadowColor="#606060"
+				        	android:shadowDx="0"
+				        	android:shadowDy="3"
+				        	android:shadowRadius="1" />
+	                </RelativeLayout>
+		        </LinearLayout>
+		        <View android:layout_width="0dp" android:layout_height="20dp" />
+		        <RelativeLayout
+		            android:id="@+id/event_menu_holder"
+		            android:layout_width="fill_parent"
+		            android:layout_height="wrap_content"
+		            android:background="@drawable/slot"
+		            android:layout_marginTop="45dp"
+		            android:layout_marginBottom="20dp">
+		            <ImageButton android:id="@+id/picture_bilder_btn"
+		                android:src="@drawable/new_img_btn"
+		                android:layout_width="wrap_content"
+		                android:layout_height="wrap_content"
+		                android:layout_centerVertical="true"
+		                android:layout_marginLeft="8dp"
+		                android:background="#00000000"
+		                android:onClick="onPictureBilderBtnClicked" />
+		            <EditText android:id="@+id/picture_bilder_text"
+		                android:layout_width="wrap_content"
+		                android:layout_height="wrap_content"
+		                android:layout_centerVertical="true"
+		                android:layout_toRightOf="@id/picture_bilder_btn"
+		                android:layout_marginLeft="8dp"
+		                android:background="@drawable/event_field_selector" />
+		            <ImageButton android:id="@+id/save_bilder_btn"
+		                android:src="@drawable/save_btn"
+		                android:layout_width="wrap_content"
+		                android:layout_height="wrap_content"
+		                android:layout_centerVertical="true"
+		                android:layout_alignParentRight="true"
+		                android:layout_marginRight="20dp"
+		                android:background="#00000000" />
+		        </RelativeLayout>
+		        <GridView android:id="@+id/pictures_list"
+		            android:layout_width="fill_parent"
+		            android:layout_height="210dp"
+		            android:numColumns="3"
+		            android:layout_below="@id/event_menu_holder"></GridView>
+		        <LinearLayout 
+	                android:layout_width="fill_parent"
+	                android:layout_height="wrap_content"
+	                android:layout_alignParentBottom="true"
+	                android:layout_marginBottom="20dp">
+	                <ImageButton
+	                    android:id="@+id/prev_bilder_btn"
+	                    android:src="@drawable/prev_btn"
+	                    android:layout_width="wrap_content"
+	                    android:layout_height="wrap_content"
+	                    android:layout_weight="0.5"
+	                    android:paddingRight="20dp"
+	                    android:background="#00000000" />
+	                <ImageButton
+	                    android:id="@+id/next_bilder_btn"
+	                    android:src="@drawable/next_btn"
+	                    android:layout_width="wrap_content"
+	                    android:layout_height="wrap_content"
+	                    android:layout_weight="0.5"
+	                    android:paddingLeft="20dp"
+	                    android:background="#00000000" />
+	            </LinearLayout>
+		    </RelativeLayout>
+		    
+		    <FrameLayout 
+		        android:layout_width="fill_parent"
+		        android:layout_height="wrap_content">
+			    <RelativeLayout 
+			        android:layout_width="fill_parent"
+			        android:layout_height="wrap_content"
+			        android:orientation="vertical">
+			        <LinearLayout
+			            android:id="@+id/btn_holder_above"
+			            android:layout_width="wrap_content"
+			            android:layout_height="wrap_content"
+			            android:layout_centerHorizontal="true">
+			            <ImageButton android:id="@+id/abort_lydopptak"
+			                android:src="@drawable/event_abort_btn"
+			                android:layout_width="wrap_content"
+			                android:layout_height="wrap_content"
+			                android:background="#00000000"
+			                android:layout_marginRight="8dp" />
+			            <RelativeLayout 
+		                    android:background="@drawable/event_header_bar"
+		                    android:layout_width="wrap_content"
+		                    android:layout_height="wrap_content"
+		                    android:orientation="vertical">
+		                    <TextView
+		                        android:layout_width="wrap_content"
+		                        android:layout_height="wrap_content"
+		                        android:textColor="#ffffff"
+		                        android:text="Lydopptak"
+		                        android:textSize="12sp"
+		                        android:layout_centerInParent="true"
+		                        android:shadowColor="#606060"
+					        	android:shadowDx="0"
+					        	android:shadowDy="3"
+					        	android:shadowRadius="1" />
+		                </RelativeLayout>
+			        </LinearLayout>
+			        <ListView android:id="@+id/recorded_sound_list"
+			            android:layout_width="fill_parent"
+			            android:layout_height="200dp"
+			            android:layout_below="@id/btn_holder_above"
+			            android:layout_marginTop="20dp" />
+			        <LinearLayout android:id="@+id/btn_holder_below"
+			            android:layout_width="fill_parent"
+			            android:layout_height="wrap_content"
+			            android:layout_alignParentBottom="true"
+			            android:layout_marginLeft="15dp"
+			            android:layout_marginRight="15dp"
+			            android:layout_marginTop="10dp"
+			            android:layout_marginBottom="20dp">
+			            <ImageButton android:id="@+id/prev_lydopptak_btn"
+			                android:src="@drawable/prev_btn"
+			                android:layout_width="wrap_content"
+			                android:layout_height="wrap_content"
+			                android:layout_weight="0.5"
+			                android:paddingRight="20dp"
+			                android:background="#00000000" />
+			            <ImageButton android:id="@+id/save_event_btn"
+			                android:src="@drawable/save_event_btn"
+			                android:layout_width="wrap_content"
+			                android:layout_height="wrap_content"
+			                android:layout_weight="0.5"
+			                android:paddingLeft="20dp"
+			                android:background="#00000000" />
+			        </LinearLayout>
+			       	<ImageButton android:id="@+id/record_sound_btn"
+			            android:src="@drawable/record_sound_btn"
+			            android:layout_width="wrap_content"
+			            android:layout_height="wrap_content"
+			            android:layout_above="@id/btn_holder_below"
+			            android:layout_centerHorizontal="true"
+			            android:background="#00000000"
+			             />
+			    </RelativeLayout>
+			    <ProgressBar android:id="@+id/event_loader"
+			        android:layout_width="wrap_content"
+			        android:layout_height="wrap_content"
+			        android:layout_gravity="center"
+			        android:visibility="gone"/>
+		    </FrameLayout>
+		</ViewFlipper>
+		<ProgressBar 
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:layout_gravity="center"/>
+	</ViewFlipper>
+</LinearLayout>

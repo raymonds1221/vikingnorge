@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+    <TableLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp">
+        <TableRow android:background="@drawable/table_top">
+            <TextView
+                android:text="NAVN"
+                android:textSize="15sp"
+                android:textColor="#808080"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="7dp"
+                android:layout_weight="0.30" />
+            <LinearLayout 
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="0.70">
+                <EditText 
+                    android:id="@+id/owner_info_firstname"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="16sp"
+                    android:textColor="#000000"
+                    android:background="#ffffff"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="0.5"/>
+                <EditText 
+                    android:id="@+id/owner_info_lastname"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="16sp"
+                    android:textColor="#000000"
+                    android:background="#ffffff"
+                    android:layout_weight="0.5"/>
+            </LinearLayout>
+        </TableRow>
+        <TableRow android:background="@drawable/table_mid">
+            <TextView
+                android:text="E-POST"
+                android:textSize="15sp"
+                android:textColor="#808080"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="7dp"
+                android:layout_weight="0.30" />
+            <EditText
+                android:id="@+id/owner_info_email"
+                android:textSize="16sp"
+                android:textColor="#000000"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="5dp"
+                android:layout_weight="0.70"
+                android:background="#ffffff"
+                android:inputType="textEmailAddress" />
+        </TableRow>
+        <TableRow android:background="@drawable/table_mid">
+            <TextView
+                android:text="MOBIL"
+                android:textSize="15sp"
+                android:textColor="#808080"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="7dp"
+                android:layout_weight="0.30" />
+            <EditText
+                android:id="@+id/owner_info_mobile"
+                android:textSize="16sp"
+                android:textColor="#000000"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="5dp"
+                android:layout_weight="0.70"
+                android:background="#ffffff" />
+        </TableRow>
+        <TableRow android:background="@drawable/table_mid">
+            <TextView
+                android:text="ADDRESSE"
+                android:textSize="15sp"
+                android:textColor="#808080"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="7dp"
+                android:layout_weight="0.30" />
+            <EditText
+                android:id="@+id/owner_info_address"
+                android:textSize="16sp"
+                android:textColor="#000000"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="5dp"
+                android:layout_weight="0.70"
+                android:background="#ffffff" />
+        </TableRow>
+        <TableRow android:background="@drawable/table_bottom">
+            <TextView
+                android:text="REGION"
+                android:textSize="15sp"
+                android:textColor="#808080"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="7dp"
+                android:layout_weight="0.30" />
+            <EditText
+                android:id="@+id/owner_info_region"
+                android:textSize="16sp"
+                android:textColor="#000000"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="5dp"
+                android:layout_weight="0.70"
+                android:background="#ffffff" />
+        </TableRow>
+    </TableLayout>
+    <ImageButton
+		android:id="@+id/save_owner_info"
+		android:src="@drawable/save_button"
+		android:background="#00000000"
+		android:layout_width='wrap_content'
+		android:layout_height="wrap_content"
+		android:layout_gravity="center_horizontal"
+	/>
+</LinearLayout>

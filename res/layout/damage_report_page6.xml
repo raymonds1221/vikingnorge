@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+    <RadioGroup android:id="@+id/earlier_damage"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:paddingTop="30dp"
+      		android:paddingLeft="30dp">
+          <RadioButton android:id="@+id/earlier_damage_yes"
+	           android:layout_width="wrap_content"
+	           android:layout_height="wrap_content"
+	           android:button="@drawable/damage_checkbox_selector"
+	           android:text="Ja"
+	           android:textColor="#ffffff" 
+	           android:checked="true" />
+          <LinearLayout 
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:gravity="top">
+              <TextView
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:text="Hvis ja:"
+                  android:textColor="#ffffff"
+                  android:gravity="top"
+                  android:layout_gravity="top"
+                  android:paddingRight="20dp" />
+              <EditText android:id="@+id/if_yes"
+                  android:layout_width="170dp"
+                  android:layout_height="70dp"
+                  android:gravity="top"
+                  android:background="@drawable/damage_report_selector" />
+          </LinearLayout>
+          <RadioButton android:id="@+id/earlier_damage_no"
+	           android:layout_width="wrap_content"
+	           android:layout_height="wrap_content"
+	           android:button="@drawable/damage_checkbox_selector"
+	           android:text="Nei"
+	           android:textColor="#ffffff" />
+      </RadioGroup>
+      <ImageView
+	        android:src="@drawable/nav_icon"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_centerHorizontal="true"
+	        android:layout_alignParentBottom="true"
+	        android:paddingBottom="20dp" />
+</RelativeLayout>

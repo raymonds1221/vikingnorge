@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+    <ScrollView
+	    android:layout_width="fill_parent"
+	    android:layout_height="fill_parent"
+	    android:fadingEdge="none">
+	    <LinearLayout
+	        android:layout_width="fill_parent"
+	        android:layout_height="wrap_content"
+	        android:orientation="vertical">
+	        <TableLayout
+			      android:layout_width="wrap_content"
+			      android:layout_height="wrap_content"
+			      android:layout_gravity="center_horizontal"
+			      android:layout_marginTop="20dp"
+			      android:paddingLeft="20dp"
+			      android:paddingRight="20dp">
+			      <TableRow android:layout_marginBottom="10dp">
+			          <TextView
+			              android:layout_width="wrap_content"
+			              android:layout_height="wrap_content"
+			              android:text="Skadedato"
+			              android:textColor="#ffffff"
+			              android:paddingRight="10dp"
+			              android:layout_weight="0.4" />
+			          <EditText android:id="@+id/damage_date"
+			              android:layout_width="wrap_content"
+			              android:layout_height="wrap_content"
+			              android:layout_weight="0.6"
+			              android:singleLine="true"
+			              android:imeOptions="actionNext"
+			              android:editable="false"
+			              android:background="@drawable/damage_report_selector" />
+			      </TableRow>
+			      <TableRow android:layout_marginBottom="10dp">
+			          <TextView
+			              android:layout_width="wrap_content"
+			              android:layout_height="wrap_content"
+			              android:layout_weight="0.4"
+			              android:text="Klokkeslett"
+			              android:textColor="#ffffff"
+			              android:paddingRight="10dp" />
+			          <EditText android:id="@+id/damage_time"
+			              android:layout_width="wrap_content"
+			              android:layout_height="wrap_content"
+			              android:layout_weight="0.6"
+			              android:singleLine="true"
+			              android:imeOptions="actionNext"
+			              android:background="@drawable/damage_report_selector" />
+			      </TableRow>
+			      <TableRow android:layout_marginBottom="10dp">
+			          <TextView
+			              android:layout_width="wrap_content"
+			              android:layout_height="wrap_content"
+			              android:layout_weight="0.4"
+			              android:text="Skadested"
+			              android:textColor="#ffffff"
+			              android:paddingRight="10dp" />
+			          <EditText android:id="@+id/place_of_damage"
+			              android:layout_width="wrap_content"
+			              android:layout_height="wrap_content"
+			              android:layout_weight="0.6"
+			              android:singleLine="true"
+			              android:imeOptions="actionNext"
+			              android:background="@drawable/damage_report_selector" />
+			      </TableRow>
+			      <TableRow android:layout_marginBottom="10dp">
+			          <TextView
+			              android:layout_width="wrap_content"
+			              android:layout_height="wrap_content"
+			              android:layout_weight="0.4"
+			              android:text="Ansvarlig"
+			              android:textColor="#ffffff"
+			              android:paddingRight="10dp" />
+			          <RadioGroup android:id="@+id/about_damage_blame"
+			                 android:layout_width="wrap_content"
+			                 android:layout_height="wrap_content"
+			                 android:layout_weight="0.6"
+			                 android:orientation="horizontal">
+			                 <RadioButton android:id="@+id/blame_a"
+			                     android:layout_width="wrap_content"
+			                     android:layout_height="wrap_content"
+			                     android:paddingLeft="25dp"
+			                     android:paddingRight="20dp"
+			                     android:text="A"
+			                     android:button="@drawable/damage_checkbox_selector" 
+			                     android:checked="true"/>
+			                 <RadioButton android:id="@+id/blame_b"
+			                     android:layout_width="wrap_content"
+			                     android:layout_height="wrap_content"
+			                     android:paddingLeft="25dp"
+			                     android:text="B"
+			                     android:button="@drawable/damage_checkbox_selector" />
+			             </RadioGroup>
+			      </TableRow>
+			      <TableRow android:layout_marginBottom="10dp">
+			          <TextView
+			              android:layout_width="wrap_content"
+			              android:layout_height="wrap_content"
+			              android:layout_weight="0.4"
+			              android:text="Hastighet"
+			              android:textColor="#ffffff"
+			              android:paddingRight="10dp" />
+			          <EditText android:id="@+id/speed_of_vehicle"
+			              android:layout_width="wrap_content"
+			              android:layout_height="wrap_content"
+			              android:layout_weight="0.6"
+			              android:singleLine="true"
+			              android:imeOptions="actionNext"
+			              android:background="@drawable/damage_report_selector" />
+			      </TableRow>
+			      <TableRow android:layout_marginBottom="10dp">
+			          <TextView
+			              android:layout_width="wrap_content"
+			              android:layout_height="wrap_content"
+			              android:layout_weight="0.4"
+			              android:text="Politi"
+			              android:textColor="#ffffff"
+			              android:paddingRight="10dp" />
+			          <RadioGroup android:id="@+id/police"
+			                 android:layout_width="wrap_content"
+			                 android:layout_height="wrap_content"
+			                 android:layout_weight="0.6"
+			                 android:orientation="horizontal" >
+			                 <RadioButton android:id="@+id/police_ja"
+			                     android:layout_width="wrap_content"
+			                     android:layout_height="wrap_content"
+			                     android:paddingLeft="25dp"
+			                     android:paddingRight="20dp"
+			                     android:text="Ja"
+			                     android:button="@drawable/damage_checkbox_selector"
+			                     android:checked="true" />
+			                 <RadioButton android:id="@+id/police_nei"
+			                     android:layout_width="wrap_content"
+			                     android:layout_height="wrap_content"
+			                     android:paddingLeft="25dp"
+			                     android:text="Nei"
+			                     android:button="@drawable/damage_checkbox_selector" />
+			             </RadioGroup>
+			      </TableRow>
+			      <TableRow android:layout_marginBottom="10dp">
+			          <TextView
+			              android:layout_width="wrap_content"
+			              android:layout_height="wrap_content"
+			              android:layout_weight="0.4"
+			              android:text="Bilrednings-firma"
+			              android:textColor="#ffffff"
+			              android:paddingRight="10dp" />
+			          <EditText android:id="@+id/rescue_company"
+			              android:layout_width="wrap_content"
+			              android:layout_height="wrap_content"
+			              android:layout_weight="0.6"
+			              android:singleLine="true"
+			              android:imeOptions="actionNext"
+			              android:background="@drawable/damage_report_selector" />
+			      </TableRow>
+			      <TableRow android:layout_marginBottom="10dp">
+			          <TextView
+			              android:layout_width="wrap_content"
+			              android:layout_height="wrap_content"
+			              android:layout_weight="0.4"
+			              android:text="Beskrivelse av hendelese"
+			              android:textColor="#ffffff"
+			              android:paddingRight="10dp" />
+			          <EditText android:id="@+id/description_of_incident"
+			              android:layout_width="wrap_content"
+			              android:layout_height="50dp"
+			              android:layout_weight="0.6"
+			              android:singleLine="false"
+			              android:gravity="top"
+			              android:imeOptions="actionDone"
+			              android:background="@drawable/damage_report_selector" />
+			      </TableRow>
+			  </TableLayout>
+			  <View android:layout_width="0dp" android:layout_height="30dp" />
+			  <ImageView
+	       	        android:src="@drawable/nav_icon"
+	       	        android:layout_width="wrap_content"
+	       	        android:layout_height="wrap_content"
+	       	        android:layout_gravity="bottom|center_horizontal"
+	       	        android:paddingBottom="20dp" />
+	    </LinearLayout>
+	</ScrollView>
+</LinearLayout>

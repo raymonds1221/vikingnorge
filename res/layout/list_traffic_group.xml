@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/event_header_bar">
+    <TextView android:id="@+id/traffic_group_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginLeft="10dp"
+        android:text="Oslo"
+        android:textSize="15sp"
+        android:textColor="#ffffff"
+        android:shadowColor="#606060"
+       	android:shadowDx="0"
+       	android:shadowDy="3"
+       	android:shadowRadius="1" />
+</LinearLayout>

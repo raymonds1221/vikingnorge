@@ -1,0 +1,491 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:panel="http://schemas.android.com/apk/res/no.incent.viking"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:background="@drawable/background">
+<ViewFlipper android:id="@+id/main_flipper"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+    <FrameLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+        <RelativeLayout 
+		    android:layout_width="fill_parent"
+		    android:layout_height="fill_parent">
+		    <ViewFlipper android:id="@+id/mainmenu_flipper"
+		        android:layout_width="fill_parent"
+		        android:layout_height="fill_parent">
+		        <no.incent.viking.widget.InitialPage
+		            android:id="@+id/initialpage"
+		            android:layout_width="fill_parent"
+		            android:layout_height="fill_parent" />
+		        <ViewFlipper android:id="@+id/mycar_flipper"
+		            android:layout_width="fill_parent"
+		            android:layout_height="fill_parent">
+		        	<TabHost
+						android:id="@+id/mycar_tabhost"
+						android:layout_width="fill_parent"
+						android:layout_height="fill_parent" >
+						<LinearLayout android:orientation="vertical"
+							android:layout_width="fill_parent"
+							android:layout_height="fill_parent">
+							<View android:layout_width="fill_parent" android:layout_height="35dp" />
+							<TabWidget android:id="@android:id/tabs"
+								android:layout_width="fill_parent"
+								android:layout_height="wrap_content"
+								android:layout_marginLeft="0dip"
+								android:layout_marginRight="0dip" />
+							<FrameLayout android:id="@android:id/tabcontent"
+								android:layout_width="fill_parent"
+								android:layout_height="fill_parent">
+								<no.incent.viking.widget.MyCarInfo android:id="@+id/mycar_info"
+								    android:layout_width="fill_parent"
+								    android:layout_height="fill_parent" />
+								<no.incent.viking.widget.MyCarFiles android:id="@+id/mycar_files"
+								    android:layout_width="fill_parent"
+								    android:layout_height="fill_parent" />
+								<no.incent.viking.widget.MyCarPhone android:id="@+id/mycar_phone"
+								    android:layout_width="fill_parent"
+								    android:layout_height="fill_parent" />
+								<no.incent.viking.widget.MyCarEvents android:id="@+id/mycar_events"
+								    android:layout_width="fill_parent"
+								    android:layout_height="fill_parent" />
+							</FrameLayout>
+						</LinearLayout>
+					</TabHost>
+					<no.incent.viking.widget.Login android:id="@+id/mycar_login"
+					    android:layout_width="fill_parent"
+					    android:layout_height="fill_parent" />    
+		        </ViewFlipper>
+		        
+				<LinearLayout
+				    android:layout_width="fill_parent"
+				    android:layout_height="fill_parent"
+				    android:orientation="vertical">
+					<View android:layout_width="0dp" android:layout_height="45dp" />
+					<LinearLayout
+					    android:layout_width="fill_parent"
+					    android:layout_height="wrap_content"
+					    android:layout_weight="0">
+					    <ImageView android:id="@+id/owner_close"
+					        android:src="@drawable/owner_close"
+					        android:layout_width="wrap_content"
+					        android:layout_height="wrap_content"
+					        android:layout_weight="0"/>
+					    <!--<RelativeLayout android:id="@+id/owner_info"
+					        android:background="@drawable/owner_tab_active"
+					        android:layout_width="wrap_content"
+					        android:layout_height="wrap_content">
+					        <TextView
+						        android:layout_width="wrap_content"
+						        android:layout_height="wrap_content"
+						        android:layout_centerInParent="true"
+						        android:text="Eier"
+						        android:textColor="#ffffff"
+						        android:textSize="14sp"
+						        android:shadowColor="#606060"
+						        android:shadowDx="0"
+						        android:shadowDy="3"
+						        android:shadowRadius="1" />
+					    </RelativeLayout>  -->
+					    <RelativeLayout android:id="@+id/car_access"
+					        android:background="@drawable/access_tab"
+					        android:layout_width="0dp"
+					        android:layout_height="wrap_content"
+					        android:layout_weight="1">
+					        <TextView
+						        android:layout_width="wrap_content"
+						        android:layout_height="wrap_content"
+						        android:layout_centerInParent="true"
+						        android:text="Tilgang"
+						        android:textColor="#ffffff"
+						        android:textSize="14sp"
+						        android:shadowColor="#606060"
+						        android:shadowDx="0"
+						        android:shadowDy="3"
+						        android:shadowRadius="1" />
+					    </RelativeLayout>
+					</LinearLayout>
+				    <ViewFlipper android:id="@+id/owner_info_flipper"
+				        android:layout_width="fill_parent"
+				        android:layout_height="fill_parent"
+				        android:layout_weight="1">
+				        <!-- <no.incent.viking.widget.OwnerInfo
+			                android:id="@+id/owner_info"
+			                android:layout_width="fill_parent"
+			                android:layout_height="fill_parent" />-->
+			            <no.incent.viking.widget.Access
+			                android:id="@+id/access"
+			                android:layout_width="fill_parent"
+			                android:layout_height="fill_parent" /> 
+				    </ViewFlipper>
+				</LinearLayout>
+				<no.incent.viking.widget.News
+				    android:id="@+id/news"
+				    android:layout_width="fill_parent"
+				    android:layout_height="fill_parent" />
+				<no.incent.viking.widget.Traffic
+				    android:id="@+id/traffic"
+				    android:layout_width="fill_parent"
+				    android:layout_height="fill_parent" />
+				<no.incent.viking.widget.EUControl
+				    android:id="@+id/eu_control"
+				    android:layout_width="fill_parent"
+				    android:layout_height="fill_parent" />
+				<no.incent.viking.widget.BingoGame
+		            android:id="@+id/bingogame"
+		            android:layout_width="fill_parent"
+		            android:layout_height="fill_parent" />
+		    </ViewFlipper>
+			<LinearLayout
+			    android:id="@+id/bottomMenu"
+			    android:layout_width="fill_parent"
+			    android:layout_height="wrap_content"
+			    android:background="@drawable/menubar"
+			    android:orientation="horizontal"
+			    android:gravity="center"
+			    android:layout_alignParentBottom="true">
+					<LinearLayout
+					    android:layout_width="100dp"
+					    android:layout_height="fill_parent"
+					    android:background="@drawable/menu_highlight"
+					    android:orientation="vertical"
+					    android:layout_weight="1"
+					    android:layout_marginTop="3dp"
+					    android:gravity="bottom|center_horizontal"
+					    android:onClick="onMyCarClicked">
+						<ImageButton
+							android:id="@+id/menu_my_car"
+							android:src="@drawable/menu_my_car" 
+							android:background="#00000000"
+							android:layout_width='wrap_content'
+							android:layout_height="wrap_content"
+							android:clickable="false"/>
+						<TextView 
+						    android:text="Bilioteket"
+						    android:textSize="10dp"
+						    android:textColor="#FFFFFFFF"
+						    android:background="#00000000"
+						    android:layout_width="wrap_content"
+						    android:layout_height="wrap_content"
+						    android:clickable="false"/>
+					</LinearLayout>
+					<LinearLayout
+					    android:layout_width="100dp"
+					    android:layout_height="fill_parent"
+					    android:orientation="vertical"
+					    android:layout_weight="1"
+					    android:layout_marginTop="3dp"
+					    android:gravity="bottom|center_horizontal"
+					    android:onClick="onFriendClicked">
+						<ImageButton
+							android:id="@+id/menu_friend"
+							android:src="@drawable/menu_friend" 
+							android:background="#00000000"
+							android:layout_width='wrap_content'
+							android:layout_height="wrap_content"
+							android:clickable="false"/>
+						<TextView 
+						    android:text="Viking Venn"
+						    android:textSize="10dp"
+						    android:textColor="#FFFFFFFF"
+						    android:background="#00000000"
+						    android:layout_width="wrap_content"
+						    android:layout_height="wrap_content"
+						    android:clickable="false"/>
+					</LinearLayout>
+					<LinearLayout
+					    android:layout_width="100dp"
+					    android:layout_height="fill_parent"
+					    android:orientation="vertical"
+					    android:layout_weight="1"
+					    android:layout_marginTop="3dp"
+					    android:gravity="bottom|center_horizontal"
+					    android:onClick="onTrafficClicked">				
+					    <ImageButton
+							android:id="@+id/menu_traffic"
+							android:src="@drawable/menu_traffic" 
+							android:background="#00000000"
+							android:layout_width='wrap_content'
+							android:layout_height="wrap_content"
+							android:clickable="false"/>
+						<TextView 
+						    android:text="Trafikk"
+						    android:textSize="10dp"
+						    android:textColor="#FFFFFFFF"
+						    android:background="#00000000"
+						    android:layout_width="wrap_content"
+						    android:layout_height="wrap_content"
+						    android:clickable="false"/>
+					</LinearLayout>
+					<LinearLayout
+					    android:layout_width="100dp"
+					    android:layout_height="fill_parent"
+					    android:orientation="vertical"
+					    android:layout_weight="1"
+					    android:layout_marginTop="3dp"
+					    android:gravity="bottom|center_horizontal"
+					    android:onClick="onEUControlClicked">
+						<ImageButton
+							android:id="@+id/menu_eu_control"
+							android:src="@drawable/menu_eu_control" 
+							android:background="#00000000"
+							android:layout_width='wrap_content'
+							android:layout_height="wrap_content"
+							android:clickable="false"/>
+						<TextView 
+						    android:text="EU kontroll"
+						    android:textSize="10dp"
+						    android:textColor="#FFFFFFFF"
+						    android:background="#00000000"
+						    android:layout_width="wrap_content"
+						    android:layout_height="wrap_content"
+						    android:clickable="false"/>
+					</LinearLayout>
+					<LinearLayout android:id="@+id/game_menu"
+					    android:layout_width="100dp"
+					    android:layout_height="fill_parent"
+					    android:orientation="vertical"
+					    android:layout_weight="1"
+					    android:layout_marginTop="3dp"
+					    android:gravity="bottom|center_horizontal"
+					    android:onClick="onGameClicked">
+						<ImageButton
+							android:id="@+id/menu_game"
+							android:src="@drawable/menu_game" 
+							android:background="#00000000"
+							android:layout_width='wrap_content'
+							android:layout_height="wrap_content"
+							android:clickable="false"/>
+						<TextView 
+						    android:text="Spill"
+						    android:textSize="10dp"
+						    android:textColor="#FFFFFFFF"
+						    android:background="#00000000"
+						    android:layout_width="wrap_content"
+						    android:layout_height="wrap_content"
+						    android:clickable="false"/>
+					</LinearLayout>
+			</LinearLayout>
+		</RelativeLayout>
+		
+        <ViewFlipper android:id="@+id/panel_flipper"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+			<LinearLayout 
+			    android:layout_width="fill_parent"
+			    android:layout_height="wrap_content"
+			    android:orientation="vertical">
+			    <RelativeLayout
+					android:id="@id/panelContent"
+					android:orientation="horizontal"
+					android:layout_width="fill_parent"
+					android:layout_height="wrap_content"
+					android:background="@drawable/curtain_bg">
+						<RelativeLayout
+						    android:layout_width="fill_parent"
+						    android:layout_height="100dp"
+						    android:layout_alignParentRight="true"
+							android:layout_alignParentTop="true"
+							android:layout_margin="10dp"
+							android:clickable="true"
+							android:onClick="onInfoBtnClick">
+						    <ImageButton
+								android:id="@+id/info_btn"
+								android:src="@drawable/info_btn" 
+								android:background="#00000000"	
+								android:layout_width="wrap_content"
+								android:layout_height="wrap_content"
+								android:layout_alignParentRight="true"
+								android:clickable="false"/>
+						</RelativeLayout>
+						<ImageButton
+							android:id="@+id/assistance_btn"
+							android:src="@drawable/assistance_btn" 
+							android:background="#00000000"
+							android:layout_width='wrap_content'
+							android:layout_height="wrap_content"
+							android:onClick="onAsstBtnClick"
+							android:layout_alignParentLeft="true"
+							android:layout_marginLeft="20dp"
+							android:layout_marginRight="20dp"
+							android:layout_marginTop="10dp"
+							android:layout_marginBottom="10dp"/>
+						<ImageButton
+							android:id="@+id/damagereport_btn"
+							android:src="@drawable/damagereport_btn" 
+							android:background="#00000000"
+							android:layout_width='wrap_content'
+							android:layout_height="wrap_content"
+							android:onClick="onDamageBtnClick"
+							android:layout_centerHorizontal="true"
+							android:layout_marginLeft="20dp"
+							android:layout_marginRight="20dp"
+							android:layout_marginTop="10dp"
+							android:layout_marginBottom="10dp"/>
+						<ImageButton
+							android:id="@+id/firstaid_btn"
+							android:src="@drawable/firstaid_btn" 
+							android:background="#00000000"
+							android:layout_width='wrap_content'
+							android:layout_height="wrap_content"
+							android:onClick="onFirstAidBtnClick"
+							android:layout_alignParentRight="true"
+							android:layout_marginLeft="20dp"
+							android:layout_marginRight="20dp"
+							android:layout_marginTop="10dp"
+							android:layout_marginBottom="10dp"/>
+				</RelativeLayout>
+				<ImageView
+			        android:src="@drawable/curtain_closed"
+			        android:layout_width="wrap_content"
+			        android:layout_height="wrap_content" />
+			</LinearLayout>
+			
+            <no.incent.viking.widget.Panel
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:id="@+id/topPanel"
+				android:paddingBottom="20dip"
+				panel:position="top"
+				panel:animationDuration="500"
+				panel:linearFlying="true"
+				panel:openedHandle="@drawable/curtain_opened"
+				panel:closedHandle="@drawable/curtain_closed">
+				<Button
+					android:id="@id/panelHandle"
+					android:layout_width="fill_parent"
+					android:layout_height="33dip" />
+				<RelativeLayout
+					android:id="@id/panelContent"
+					android:orientation="horizontal"
+					android:layout_width="fill_parent"
+					android:layout_height="wrap_content"
+					android:background="@drawable/curtain_bg">
+						<RelativeLayout
+						    android:layout_width="fill_parent"
+						    android:layout_height="100dp"
+						    android:layout_alignParentRight="true"
+							android:layout_alignParentTop="true"
+							android:layout_margin="10dp"
+							android:clickable="true"
+							android:onClick="onInfoBtnClick">
+						    <ImageButton
+								android:id="@+id/info_btn"
+								android:src="@drawable/info_btn" 
+								android:background="#00000000"	
+								android:layout_width="wrap_content"
+								android:layout_height="wrap_content"
+								android:layout_alignParentRight="true"
+								android:clickable="false"/>
+						</RelativeLayout>
+						<ImageButton
+							android:id="@+id/assistance_btn"
+							android:src="@drawable/assistance_btn" 
+							android:background="#00000000"
+							android:layout_width='wrap_content'
+							android:layout_height="wrap_content"
+							android:onClick="onAsstBtnClick"
+							android:layout_alignParentLeft="true"
+							android:layout_marginLeft="20dp"
+							android:layout_marginRight="20dp"
+							android:layout_marginTop="10dp"
+							android:layout_marginBottom="10dp"/>
+						<ImageButton
+							android:id="@+id/damagereport_btn"
+							android:src="@drawable/damagereport_btn" 
+							android:background="#00000000"
+							android:layout_width='wrap_content'
+							android:layout_height="wrap_content"
+							android:onClick="onDamageBtnClick"
+							android:layout_centerHorizontal="true"
+							android:layout_marginLeft="20dp"
+							android:layout_marginRight="20dp"
+							android:layout_marginTop="10dp"
+							android:layout_marginBottom="10dp"/>
+						<ImageButton
+							android:id="@+id/firstaid_btn"
+							android:src="@drawable/firstaid_btn" 
+							android:background="#00000000"
+							android:layout_width='wrap_content'
+							android:layout_height="wrap_content"
+							android:onClick="onFirstAidBtnClick"
+							android:layout_alignParentRight="true"
+							android:layout_marginLeft="20dp"
+							android:layout_marginRight="20dp"
+							android:layout_marginTop="10dp"
+							android:layout_marginBottom="10dp"/>
+				</RelativeLayout>
+			</no.incent.viking.widget.Panel>
+			
+            <RelativeLayout android:id="@+id/status_container"
+		        android:layout_width="fill_parent"
+		        android:layout_height="wrap_content"
+		        android:background="@drawable/status_bar_small">
+				<ImageButton android:id="@+id/close_status"
+				    android:src="@drawable/close_status"
+				    android:layout_width="wrap_content"
+				    android:layout_height="wrap_content"
+				    android:layout_centerVertical="true"
+				    android:paddingLeft="15dp"
+				    android:background="#00000000"
+				    android:onClick="onCloseStatusBar" />
+		        <TextView android:id="@+id/status_text"
+		            android:layout_width="wrap_content"
+		            android:layout_height="wrap_content"
+		            android:layout_centerVertical="true"
+		            android:layout_toRightOf="@id/close_status"
+		            android:text="STATUS"
+		            android:textSize="18dp"
+		            android:textColor="#ffffff"
+		            android:paddingLeft="25dp"
+		            android:textStyle="bold" />
+		        <ImageView android:id="@+id/status_car_img"
+		            android:src="@drawable/status_car_ordered"
+		            android:layout_width="wrap_content"
+		            android:layout_height="wrap_content"
+		            android:layout_centerVertical="true"
+		            android:layout_toRightOf="@id/status_text"
+		            android:paddingLeft="10dp" />
+		        <TextView 
+		            android:layout_width="wrap_content"
+		            android:layout_height="wrap_content"
+		            android:layout_centerVertical="true"
+		            android:layout_toRightOf="@id/status_car_img"
+		            android:text="Oppdrag mottatt"
+		            android:textSize="16dp"
+		            android:textColor="#ffffff"
+		            android:paddingLeft="10dp" />
+		        <ImageView
+		            android:src="@drawable/refresh_status_btn"
+		            android:layout_width="wrap_content"
+		            android:layout_height="wrap_content"
+		            android:layout_centerVertical="true"
+		            android:layout_alignParentRight="true"
+		            android:paddingRight="15dp"
+		            android:onClick="onRefreshOrderStatus" />
+		    </RelativeLayout>
+        </ViewFlipper>
+    </FrameLayout>
+    <no.incent.viking.widget.DamageReportV2 android:id="@+id/damage_report"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" />
+    <no.incent.viking.widget.FirstAid android:id="@+id/firstaid_page"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" />
+    <no.incent.viking.widget.CallWaiting android:id="@+id/call_waiting"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" />
+    <no.incent.viking.widget.InfoPage android:id="@+id/info_page"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" />
+    <no.incent.viking.widget.PictureView android:id="@+id/picture_view"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" />
+    <no.incent.viking.widget.MyCarEventPictureView android:id="@+id/mycar_event_picture_view"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" />
+</ViewFlipper>
+</FrameLayout>

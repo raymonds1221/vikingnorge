@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+    <RelativeLayout android:id="@+id/status_container"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/status_bar">
+        <TextView 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="STATUS"
+            android:textSize="18dp"
+            android:textColor="#ffffff"
+            android:paddingLeft="20dp"
+            android:textStyle="bold" />
+        <ImageView
+            android:src="@drawable/status_car_ordered"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:paddingLeft="100dp" />
+        <TextView 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="Oppdrag mottatt"
+            android:textSize="16dp"
+            android:textColor="#ffffff"
+            android:paddingLeft="120dp" />
+        <ImageView
+            android:src="@drawable/refresh_status_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:paddingRight="20dp" />
+    </RelativeLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:layout_below="@id/status_container"
+        android:orientation="vertical">
+        <View android:layout_width="0dp" android:layout_height="50dp" />
+	    <TextView
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_gravity="center_horizontal"
+	        android:text="BIL KOMMER!"
+	        android:textSize="35dp"
+	        android:textColor="#ffffff"
+	        android:textStyle="bold" />
+	    <View android:layout_width="0dp" android:layout_height="20dp" />
+	    <TextView
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_gravity="center_horizontal"
+	        android:text="Takk for din bestilling!"
+	        android:textSize="15sp"
+	        android:textColor="#ffffff" />
+	    <TextView
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_gravity="center_horizontal"
+	        android:text="Ditt registeringsnummer er din referanse"
+	        android:textSize="15sp"
+	        android:textColor="#ffffff" />
+    </LinearLayout>
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/waiting_bg">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:paddingTop="60dp">
+            <ImageButton
+		        android:src="@drawable/bingo_btn"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:layout_gravity="center_horizontal"
+		        android:background="#00000000"
+		        android:paddingBottom="5dp"
+		        android:onClick="onWaitingGameClicked"/>
+	        <View android:layout_width="10dp" android:layout_height="0dp" />
+		    <ImageButton
+		        android:src="@drawable/damagereport_btn"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:layout_gravity="center_horizontal"
+		        android:background="#00000000"
+		        android:paddingBottom="5dp"
+		        android:onClick="onWaithingDamgeReportClicked"/>
+		    <View android:layout_width="10dp" android:layout_height="0dp" />
+		    <ImageButton
+		        android:src="@drawable/firstaid_btn"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:layout_gravity="center_horizontal"
+		        android:background="#00000000"
+		        android:paddingBottom="5dp"
+		        android:onClick="onWaitingFirstAidClicked"/>
+        </LinearLayout>
+    </RelativeLayout>
+</RelativeLayout>

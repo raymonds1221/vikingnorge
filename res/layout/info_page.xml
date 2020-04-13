@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+    <ImageView
+        android:src="@drawable/curtain_closed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <RelativeLayout 
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+        <ImageView 
+	        android:src="@drawable/arrow"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_centerHorizontal="true"
+	        android:paddingTop="20dp" />
+        <ImageButton
+            android:src="@drawable/close_info_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:paddingRight="20dp"
+            android:background="#00000000"
+            android:onClick="onCloseDamageReportClicked" />
+    </RelativeLayout>
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="400dp"
+        android:scrollbars="none">
+        <TextView android:id="@+id/info_content"
+	        android:layout_width="fill_parent"
+	        android:layout_height="fill_parent"
+			android:paddingLeft="20dp"
+			android:paddingRight="20dp"
+	        android:textColor="#ffffff"/>
+    </ScrollView>
+</LinearLayout>

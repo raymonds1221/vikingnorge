@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+    <ScrollView
+	            android:layout_width="fill_parent"
+	            android:layout_height="fill_parent">
+	            <LinearLayout
+	                android:layout_width="fill_parent"
+	                android:layout_height="wrap_content"
+	                android:orientation="vertical">
+	                <TableLayout
+	           	        android:layout_width="wrap_content"
+	           	        android:layout_height="wrap_content"
+	           	        android:layout_gravity="center_horizontal"
+	           	        android:layout_marginTop="20dp">
+	           	        <TableRow android:layout_marginBottom="10dp">
+		                    <TextView
+		                        android:layout_width="wrap_content"
+		                        android:layout_height="wrap_content"
+		                        android:text="Fornavn"
+		                        android:textColor="#ffffff"
+		                        android:paddingRight="10dp" />
+		                    <EditText android:id="@+id/counterpart_firstname"
+		                        android:layout_width="wrap_content"
+		                        android:layout_height="wrap_content"
+		                        android:singleLine="true"
+		                        android:inputType="textPersonName"
+		                        android:background="@drawable/damage_report_selector" />
+		                </TableRow>
+		                <TableRow android:layout_marginBottom="10dp">
+		                    <TextView
+		                        android:layout_width="wrap_content"
+		                        android:layout_height="wrap_content"
+		                        android:text="Etternavn"
+		                        android:textColor="#ffffff"
+		                        android:paddingRight="10dp" />
+		                    <EditText android:id="@+id/counterpart_lastname"
+		                        android:layout_width="wrap_content"
+		                        android:layout_height="wrap_content"
+		                        android:singleLine="true"
+		                        android:inputType="textPersonName"
+		                        android:background="@drawable/damage_report_selector" />
+		                </TableRow>
+		                <TableRow android:layout_marginBottom="10dp">
+		                    <TextView
+		                        android:layout_width="wrap_content"
+		                        android:layout_height="wrap_content"
+		                        android:text="Addresse"
+		                        android:textColor="#ffffff"
+		                        android:paddingRight="10dp" />
+		                    <EditText android:id="@+id/counterpart_address"
+		                        android:layout_width="wrap_content"
+		                        android:layout_height="wrap_content"
+		                        android:singleLine="true"
+		                        android:inputType="text"
+		                        android:background="@drawable/damage_report_selector" />
+		                </TableRow>
+		                <TableRow android:layout_marginBottom="10dp">
+		                    <TextView
+		                        android:layout_width="wrap_content"
+		                        android:layout_height="wrap_content"
+		                        android:text="Postnr/Sted"
+		                        android:textColor="#ffffff"
+		                        android:paddingRight="10dp" />
+		                    <EditText android:id="@+id/counterpart_zipcity"
+		                        android:layout_width="wrap_content"
+		                        android:layout_height="wrap_content"
+		                        android:singleLine="true"
+		                        android:inputType="textPostalAddress"
+		                        android:background="@drawable/damage_report_selector" />
+		                </TableRow>
+		                <TableRow android:layout_marginBottom="10dp">
+		                    <TextView
+		                        android:layout_width="wrap_content"
+		                        android:layout_height="wrap_content"
+		                        android:text="Telefon privat"
+		                        android:textColor="#ffffff"
+		                        android:paddingRight="10dp" />
+		                    <EditText android:id="@+id/counterpart_phone_number"
+		                        android:layout_width="wrap_content"
+		                        android:layout_height="wrap_content"
+		                        android:singleLine="true"
+		                        android:inputType="phone"
+		                        android:background="@drawable/damage_report_selector" />
+		                </TableRow>
+		                <TableRow android:layout_marginBottom="10dp">
+		                    <TextView
+		                        android:layout_width="wrap_content"
+		                        android:layout_height="wrap_content"
+		                        android:text="E-post"
+		                        android:textColor="#ffffff"
+		                        android:paddingRight="10dp" />
+		                    <EditText android:id="@+id/counterpart_email"
+		                        android:layout_width="wrap_content"
+		                        android:layout_height="wrap_content"
+		                        android:singleLine="true"
+		                        android:inputType="textEmailAddress"
+		                        android:background="@drawable/damage_report_selector" />
+		                </TableRow>
+		                <TableRow android:layout_marginBottom="10dp">
+		                    <TextView
+		                        android:layout_width="wrap_content"
+		                        android:layout_height="wrap_content"
+		                        android:text="Forsikrings-selskap"
+		                        android:textColor="#ffffff"
+		                        android:paddingRight="10dp" />
+		                    <EditText android:id="@+id/counterpart_insurance_company"
+		                        android:layout_width="wrap_content"
+		                        android:layout_height="wrap_content"
+		                        android:singleLine="true"
+		                        android:inputType="text"
+		                        android:background="@drawable/damage_report_selector" />
+		                </TableRow>
+		                <TableRow android:layout_marginBottom="50dp">
+		                    <TextView
+		                        android:layout_width="wrap_content"
+		                        android:layout_height="wrap_content"
+		                        android:text="Førers førerkortnr"
+		                        android:textColor="#ffffff"
+		                        android:paddingRight="10dp" />
+		                    <EditText android:id="@+id/counterpart_driverlicenseno"
+		                        android:layout_width="wrap_content"
+		                        android:layout_height="wrap_content"
+		                        android:singleLine="true"
+		                        android:inputType="text"
+		                        android:background="@drawable/damage_report_selector" />
+		                </TableRow>
+	           	    </TableLayout>
+		            <ImageView android:id="@+id/save_damage_report"
+		                android:src="@drawable/save_send_btn"
+		                android:layout_width="wrap_content"
+		                android:layout_height="wrap_content"
+		                android:layout_gravity="center_horizontal"
+		                android:layout_marginBottom="20dp"
+		                android:background="#00000000" />
+	            </LinearLayout>
+	        </ScrollView>
+</LinearLayout>

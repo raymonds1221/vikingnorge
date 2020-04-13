@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:layout_marginBottom="50dp"
+    android:orientation="vertical">
+	<TextView
+	    android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginLeft="20dp"
+		android:layout_marginTop="20dp"
+		android:layout_marginBottom="10dp"
+		android:text="Her kan du lage en oversikt over alle filer du trenger i sammenheng med bilen din. Hver kategori kan inneholde flere bilder."
+		android:textSize="15dp"
+		android:textColor="#FFFFFF" />
+	<TextView
+	    android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginLeft="20dp"
+		android:text="Dra fingeren over feltet for å slette"
+		android:textSize="15dp"
+		android:textColor="#FFFFFF" />
+	<LinearLayout
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    android:orientation="horizontal"
+	    android:background="@drawable/slot">"
+	    <EditText 
+			android:id="@+id/phone_name"  
+			android:layout_width="fill_parent" 
+			android:layout_height="36dp"
+			android:layout_weight="1" 
+			android:background="@drawable/textfield_selector"
+			android:layout_marginLeft="20dp"
+			android:layout_marginRight="4dp"
+			android:paddingLeft="10dp"
+			android:singleLine="true"
+			android:layout_gravity="center"
+			android:hint="Navn" />
+	    <EditText 
+			android:id="@+id/phone_number"  
+			android:layout_width="fill_parent" 
+			android:layout_height="36dp"
+			android:layout_weight="1" 
+			android:background="@drawable/textfield_selector"
+			android:layout_marginLeft="4dp"
+			android:layout_marginRight="10dp"
+			android:paddingLeft="10dp"
+			android:singleLine="true"
+			android:layout_gravity="center"
+			android:inputType="phone"
+			android:hint="Nummer" />
+	    <ImageButton
+			android:id="@+id/save_btn"
+			android:src="@drawable/save_btn" 
+			android:background="#00000000"
+			android:layout_width="40dp"
+			android:layout_height="wrap_content"
+			android:onClick="onSaveBtnClick"
+			android:layout_gravity="center"/>
+	</LinearLayout>
+	<TextView 
+		    android:id="@+id/mycar_files_bar"
+		    android:layout_width="fill_parent"
+		    android:layout_height="wrap_content"
+		    android:background="@drawable/description_bar"
+		    android:text="LAGREDE NUMRE"
+			android:textSize="15dp"
+			android:textColor="#FFFFFFFF"
+			android:paddingLeft="10dp"/>
+	<ViewFlipper android:id="@+id/mycar_phone_list_flipper"
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content">
+	    <ListView android:id="@+id/mycar_phone_list"
+		    android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:cacheColorHint="#00000000"/>
+	    <RelativeLayout
+	        android:layout_width="fill_parent"
+	        android:layout_height="fill_parent">
+	       <ProgressBar
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:layout_centerInParent="true"
+	            android:layout_marginTop="60dp"
+	            style="@android:style/Widget.ProgressBar.Small.Inverse" />
+	    </RelativeLayout>
+	</ViewFlipper>
+</LinearLayout>

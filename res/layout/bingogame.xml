@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:paddingBottom="50dp"
+    android:orientation="vertical" >
+    <ViewFlipper 
+        android:id="@+id/game_flipper"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+        <LinearLayout 
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical">
+		    <LinearLayout
+			    android:layout_width="fill_parent"
+			    android:layout_height="35dp"/>
+			<LinearLayout
+			    android:layout_width="fill_parent"
+			    android:layout_height="wrap_content"
+			    android:orientation="horizontal"
+			    android:gravity="center">
+				<ImageView
+				    android:layout_width="fill_parent"
+					android:layout_height="wrap_content"
+					android:src="@drawable/car_bingo"
+					android:layout_marginLeft ="10dp"
+					android:layout_weight="1"
+					 />
+				<LinearLayout
+				    android:layout_width="fill_parent"
+				    android:layout_height="wrap_content"
+				    android:orientation="horizontal"
+				    android:gravity="center"
+				    android:layout_weight="1">
+					<ImageButton
+						android:id="@+id/new_game_btn"
+						android:src="@drawable/new_game_btn" 
+						android:background="#00000000"
+						android:layout_width='wrap_content'
+						android:layout_height="wrap_content"
+						android:layout_weight="1"
+						android:layout_marginLeft ="10dp"
+						android:onClick="onNewGameBtnClicked"/>
+					<ImageButton
+						android:id="@+id/game_info_btn"
+						android:src="@drawable/game_info_btn" 
+						android:background="#00000000"
+						android:layout_width='wrap_content'
+						android:layout_height="wrap_content"
+						android:layout_marginRight ="10dp"
+						android:layout_weight="1"/>
+				</LinearLayout>
+			</LinearLayout>
+			<LinearLayout
+			    android:layout_width="fill_parent"
+			    android:layout_height="20dp"/>
+			<ScrollView
+			    android:layout_width="fill_parent"
+			    android:layout_height="wrap_content">
+			    <LinearLayout android:id="@+id/bingoContainer"
+				    android:layout_width="fill_parent"
+				    android:layout_height="wrap_content"
+				    android:orientation="vertical"
+				    android:gravity="center">	    
+				</LinearLayout>
+			</ScrollView>
+		</LinearLayout>
+		<LinearLayout 
+		    android:layout_width="fill_parent"
+		    android:layout_height="fill_parent"
+		    android:orientation="vertical"
+		    android:padding="15dp"
+		    android:visibility="gone">
+			<View android:layout_width="0dp" android:layout_height="35dp" />
+			<ImageView android:id="@+id/close_game_info"
+			    android:src="@drawable/dr_close_btn"
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:layout_gravity="right" />
+			<ScrollView
+			    android:layout_width="fill_parent"
+			    android:layout_height="wrap_content">
+			   	<LinearLayout
+			   	    android:layout_width="fill_parent"
+			   	    android:layout_height="wrap_content"
+			   	    android:orientation="vertical">
+			   	    <ImageView
+					    android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:src="@drawable/car_bingo"
+						 />
+					<TextView android:id="@+id/game_info1"
+					    android:layout_width="wrap_content"
+					    android:layout_height="wrap_content"
+					    android:text="Venter du pÃ¥ Viking, stÃ¥r i kÃ¸ eller kjeder deg i baksetet? PrÃ¸v vÃ¥r tradisjonelle bilbingo!"
+					    android:textColor="#ffffff"
+					    android:textSize="12sp"
+					    android:layout_marginBottom="15dp" />
+					<TextView android:id="@+id/game_info2"
+					    android:layout_width="wrap_content"
+					    android:layout_height="wrap_content"
+					    android:text="Ettersom du fÃ¥r Ã¸ye pÃ¥ de ulike ikonene langs veien, trykker du pÃ¥ ikonet og det merkes i fargen grÃ¸nt. Spillet gÃ¥r ut pÃ¥ Ã¥ fÃ¥ flest grÃ¸nne ikoner innen man har kommet fram til destinasjon eller innen en definert tidsfrist."
+					    android:textColor="#ffffff"
+					    android:textSize="12sp"
+					    android:layout_marginBottom="15dp" />
+					<ImageView
+					    android:src="@drawable/bingo17"
+					    android:layout_width="wrap_content"
+					    android:layout_height="wrap_content" />
+					<TextView  android:id="@+id/game_info3"
+					    android:layout_width="wrap_content"
+					    android:layout_height="wrap_content"
+					    android:text="For eksempel trykker du bensinpumpe ikonet nÃ¥r du passerer eller ser en bensinpumpe, og du er et steg nÃ¦rmere i kampen om Ã¥ gÃ¥ av med seieren i Vikings bilbingo! Spill med mor, far, bror, sÃ¸ster, venn, eller den som mÃ¥tte sitte sammen med deg i baksetet."
+					    android:textColor="#ffffff"
+					    android:textSize="12sp"
+					    android:layout_marginBottom="15dp" />
+			   	</LinearLayout>
+			</ScrollView>
+		</LinearLayout>
+	</ViewFlipper>
+</LinearLayout>

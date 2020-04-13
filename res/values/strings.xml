@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Viking+</string>
+    <string name="api_url">http://50.57.190.160/incent/viking/index.php/</string>
+    <!--<string name="api_url">http://50.57.91.129/incent/viking/index.php/</string>-->
+    <string name="flurry_application_key">ZG8Z99GG6SCFYN4Y47C4</string>
+    <string-array name="edit_image">
+        <item>Ta bilde</item>
+        <item>Hent fra telefonen</item>
+        <item>Slett bil</item>
+    </string-array>
+    <string-array name="share_via">
+        <item>Del bil</item>
+        <item>Tilgang</item>
+    </string-array>
+    <string-array name="car_files_menu">
+        <item>Ta nytt bilde</item>
+        <item>Hent fra bildegalleri</item>
+    </string-array>
+</resources>

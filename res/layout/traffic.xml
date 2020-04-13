@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/content_traffic"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical">
+	<LinearLayout
+	    android:layout_width="fill_parent"
+	    android:layout_height="35dp"/>
+	<LinearLayout
+	    android:layout_width="fill_parent"
+	    android:layout_height="48dp"
+	    android:orientation="horizontal">
+		<LinearLayout
+		    android:layout_width="fill_parent"
+		    android:layout_height="fill_parent"
+		    android:layout_weight="1"
+		    android:orientation="horizontal">
+			<Button
+				android:id="@+id/traffic_map_btn"
+				android:text="Kart"
+				android:textSize="15dip"
+				android:textColor="#FFFFFFFF"
+				android:background="@drawable/tr_submenu_btn_active"
+				android:layout_width="fill_parent"
+				android:layout_height="fill_parent"
+				android:layout_weight="1"
+				android:enabled="true"/>
+			<Button
+				android:id="@+id/traffic_list_btn"
+				android:text="Liste"
+				android:textSize="15dip"
+				android:textColor="#FFFFFFFF"
+				android:background="@drawable/tr_submenu_btn"
+				android:layout_width="fill_parent"
+				android:layout_height="fill_parent"
+				android:layout_weight="1"
+				android:enabled="true"/>
+		</LinearLayout>
+		<LinearLayout
+		    android:layout_width="fill_parent"
+		    android:layout_height="fill_parent"
+		    android:layout_weight="1"
+		    android:orientation="horizontal"
+		    android:background="@drawable/tr_submenu_btn"
+		    android:gravity="center">
+			<ImageButton
+				android:id="@+id/search_btn"
+				android:src="@drawable/search_icon" 
+				android:background="#00000000"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:onClick="onSearchBtnClick"
+				android:layout_marginLeft="6dp"
+				android:layout_marginRight="6dp"
+				/>
+			<EditText 
+				android:id="@+id/search_field" 
+				android:layout_width="fill_parent" 
+				android:layout_height="36dp"
+				android:background="@drawable/searchfield_selector"
+				android:paddingLeft="10dp"
+				android:paddingRight="10dp"
+				android:singleLine="true"
+				android:layout_marginLeft="6dp"
+				android:layout_marginRight="6dp"
+				android:imeOptions="actionSearch"
+				android:hint="Fylke/Vei" />
+		</LinearLayout>
+	</LinearLayout>
+	<ViewFlipper android:id="@+id/traffic_flipper"
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content">
+		<FrameLayout 
+		    android:layout_width="fill_parent"
+		    android:layout_height="wrap_content"
+		    android:layout_marginBottom="50dp">
+		    <com.google.android.maps.MapView
+		        android:id="@+id/traffic_map"
+		        android:layout_width="fill_parent"
+		        android:layout_height="wrap_content"
+		        android:clickable="true"
+		        android:apiKey="0kSYEv4778YA4XV1NOPtz4lQADfffyjC26wlVPA" />
+		    <RelativeLayout
+		        android:layout_width="fill_parent"
+		        android:layout_height="wrap_content"
+		        android:paddingLeft="20dp">
+		        <ImageButton android:id="@+id/refresh_map"
+		            android:src="@drawable/refresh_btn"
+		            android:layout_width="wrap_content"
+		            android:layout_height="wrap_content"
+		            android:layout_alignParentRight="true"
+		            android:background="#00000000" />
+		        <ImageButton android:id="@+id/load_all_map"
+		            android:src="@drawable/load_all_btn"
+		            android:layout_width="wrap_content"
+		            android:layout_height="wrap_content"
+		            android:layout_marginRight="2dp"
+		            android:layout_toLeftOf="@id/refresh_map"
+		            android:background="@android:color/transparent" />
+		        <ProgressBar android:id="@+id/refresh_map_loader"
+			        android:layout_width="wrap_content"
+			        android:layout_height="wrap_content"
+			        android:layout_centerHorizontal="true"
+			        android:layout_marginTop="130dp"
+			        android:visibility="gone" />
+		    </RelativeLayout>
+		</FrameLayout>
+		
+		<FrameLayout 
+		    android:layout_width="fill_parent"
+		    android:layout_height="wrap_content">
+		    <LinearLayout
+			    android:layout_width="fill_parent"
+			    android:layout_height="wrap_content"
+			    android:orientation="vertical"
+			    android:layout_marginBottom="50dp">
+			    <LinearLayout
+			        android:layout_width="wrap_content"
+			        android:layout_height="wrap_content"
+			        android:layout_gravity="center_horizontal">
+			        <RelativeLayout android:id="@+id/sort_area_name"
+			            android:layout_width="wrap_content"
+			            android:layout_height="wrap_content"
+			            android:background="@drawable/sort_county_btn_active"
+			            android:orientation="vertical">
+			            <TextView
+			                android:layout_width="wrap_content"
+			                android:layout_height="wrap_content"
+			                android:layout_centerInParent="true"
+			                android:text="Fylker"
+			                android:textSize="15sp"
+			                android:textColor="#ffffff"
+					        android:shadowColor="#606060"
+					       	android:shadowDx="0"
+					       	android:shadowDy="3"
+					       	android:shadowRadius="1" />
+			        </RelativeLayout>
+			        <RelativeLayout android:id="@+id/sort_road_name"
+			            android:layout_width="wrap_content"
+			            android:layout_height="wrap_content"
+			            android:background="@drawable/sort_road_btn"
+			            android:orientation="vertical">
+			            <TextView
+			                android:layout_width="wrap_content"
+			                android:layout_height="wrap_content"
+			                android:layout_centerInParent="true"
+			                android:text="Vei"
+			                android:textSize="15sp"
+			                android:textColor="#ffffff"
+					        android:shadowColor="#606060"
+					       	android:shadowDx="0"
+					       	android:shadowDy="3"
+					       	android:shadowRadius="1" />
+			        </RelativeLayout>
+			        <RelativeLayout android:id="@+id/sort_time"
+			            android:layout_width="wrap_content"
+			            android:layout_height="wrap_content"
+			            android:background="@drawable/sort_time_btn"
+			            android:orientation="vertical">
+			            <TextView
+			                android:layout_width="wrap_content"
+			                android:layout_height="wrap_content"
+			                android:layout_centerInParent="true"
+			                android:text="Tid"
+			                android:textSize="15sp"
+			                android:textColor="#ffffff"
+					        android:shadowColor="#606060"
+					       	android:shadowDx="0"
+					       	android:shadowDy="3"
+					       	android:shadowRadius="1" />
+			        </RelativeLayout>
+			        <ImageView android:id="@+id/load_all_list"
+			            android:src="@drawable/load_all_btn"
+			            android:layout_width="wrap_content"
+			            android:layout_height="wrap_content"
+			            android:background="@android:color/transparent" />
+			        <ImageButton android:id="@+id/refresh_list"
+			            android:src="@drawable/refresh_btn"
+			            android:layout_width="wrap_content"
+			            android:layout_height="wrap_content"
+			            android:background="#00000000"/>
+			    </LinearLayout>
+			    <View android:layout_width="0dp" android:layout_height="10dp" />
+			    <ExpandableListView android:id="@+id/traffic_expandable_list"
+			        android:layout_width="fill_parent"
+			        android:layout_height="wrap_content"
+			        android:groupIndicator="@null" />
+			</LinearLayout>
+			<ProgressBar android:id="@+id/refresh_list_loader"
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:layout_gravity="center_horizontal"
+			    android:layout_marginTop="130dp"
+			    android:visibility="gone"/>
+		</FrameLayout>
+		
+		<FrameLayout 
+		    android:layout_width="fill_parent"
+		    android:layout_height="wrap_content">
+		    <LinearLayout
+			    android:layout_width="fill_parent"
+			    android:layout_height="wrap_content"
+			    android:orientation="vertical">
+			    <LinearLayout 
+			        android:layout_width="wrap_content"
+			        android:layout_height="wrap_content"
+			        android:layout_gravity="center_horizontal">
+			        <ImageButton android:id="@+id/traffic_info_back"
+			            android:src="@drawable/back_btn"
+			            android:layout_width="wrap_content"
+			            android:layout_height="wrap_content"
+			            android:background="#00000000"/>
+			        <View android:layout_width="5dp" android:layout_height="0dp" />
+			        <RelativeLayout
+			            android:layout_width="wrap_content"
+			            android:layout_height="wrap_content"
+			            android:background="@drawable/event_header_bar">
+			            <TextView
+			                android:layout_width="wrap_content"
+			                android:layout_height="wrap_content"
+			                android:layout_centerInParent="true"
+			                android:text="Veimelding"
+			                android:textColor="#ffffff"
+			                android:shadowColor="#606060"
+					       	android:shadowDx="0"
+					       	android:shadowDy="3"
+					       	android:shadowRadius="1" />
+			        </RelativeLayout>
+			        <View android:layout_width="5dp" android:layout_height="0dp" />
+			        <ImageButton android:id="@+id/refresh_traffic_info"
+			            android:src="@drawable/refresh_btn"
+			            android:layout_width="wrap_content"
+			            android:layout_height="wrap_content"
+			            android:background="#00000000" />
+			    </LinearLayout>
+			    <View android:layout_width="0dp" android:layout_height="40dp" />
+			    <LinearLayout 
+			        android:layout_width="wrap_content"
+			        android:layout_height="wrap_content"
+			        android:layout_marginLeft="20dp"
+			        android:layout_marginRight="20dp">
+			        <ImageView
+				        android:src="@drawable/map_pin"
+				        android:layout_width="wrap_content"
+				        android:layout_height="wrap_content" />
+			        <View android:layout_width="20dp" android:layout_height="0dp" />
+			        <LinearLayout 
+			            android:layout_width="wrap_content"
+			            android:layout_height="wrap_content"
+			            android:orientation="vertical">
+			            <TextView android:id="@+id/traffic_road_name"
+			                android:layout_width="wrap_content"
+			                android:layout_height="wrap_content"
+			                android:text="RV4"
+			                android:textColor="#ffffff"
+			                android:textSize="20sp"
+			                android:textStyle="bold" />
+			            <TextView android:id="@+id/traffic_optional_text"
+			                android:layout_width="wrap_content"
+			                android:layout_height="wrap_content"
+			                android:text="Fyresdal kommune: Aksellastrestriksjoner på kommunale veger innføres 15.03.2012."
+			                android:textColor="#ffffff"
+			                android:textSize="15sp"
+			                android:layout_marginBottom="10dp" />
+			            <TextView android:id="@+id/traffic_time"
+			                android:layout_width="wrap_content"
+			                android:layout_height="wrap_content"
+			                android:text="Sist oppdatert 02.12.2012 9:42"
+			                android:textColor="#ffffff"
+			                android:textSize="13sp"
+			                android:textStyle="italic" />
+			            <TextView android:id="@+id/traffic_area_name"
+			                android:layout_width="wrap_content"
+			                android:layout_height="wrap_content"
+			                android:text="Kilde: Staten Vegvesen"
+			                android:textColor="#ffffff"
+			                android:textSize="13sp"
+			                android:textStyle="italic" />
+			        </LinearLayout>
+			    </LinearLayout>
+			</LinearLayout>
+			<ProgressBar android:id="@+id/refresh_info_loader"
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:layout_gravity="center"
+			    android:visibility="gone" />
+		</FrameLayout>
+	</ViewFlipper>
+</LinearLayout>

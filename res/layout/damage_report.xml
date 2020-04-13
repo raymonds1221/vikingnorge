@@ -1,0 +1,767 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:swipenav="http://schemas.android.com/apk/res/no.incent.viking"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical">
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/header_bar">
+        <TextView android:id="@+id/page_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="15dp"
+            android:text="1/6"
+            android:textColor="#ffffff"
+            android:shadowColor="#606060"
+	       	android:shadowDx="0"
+	       	android:shadowDy="3"
+	       	android:shadowRadius="1" />
+        <TextView android:id="@+id/header_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="REGISTRERINGSNUMMER"
+            android:textColor="#ffffff"
+            android:textSize="12sp"
+            android:shadowColor="#606060"
+	       	android:shadowDx="0"
+	       	android:shadowDy="3"
+	       	android:shadowRadius="1" />
+        <ImageButton android:id="@+id/close_damage_report"
+            android:src="@drawable/dr_close_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:background="#00000000"
+            android:onClick="onCloseDamageReportClicked" />
+    </RelativeLayout>
+    <FrameLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+	    <ViewFlipper android:id="@+id/damage_report_flipper"
+	        android:layout_width="fill_parent"
+	        android:layout_height="fill_parent">
+	        
+	        <RelativeLayout
+	            android:layout_width="fill_parent"
+	            android:layout_height="fill_parent"
+	            android:padding="20dp">
+	           	<TextView android:id="@+id/digitalskademeldingsskjema"
+	           	    android:layout_width="wrap_content"
+	           	    android:layout_height="wrap_content"
+	           	    android:layout_centerHorizontal="true"
+	           	    android:text="Digitalt skademeldingsskjema"
+	           	   	android:textSize="20sp"
+	           	   	android:textColor="#fff"
+	           	   	android:paddingBottom="20dp" />
+	           	 <TextView
+	           	    android:layout_width="wrap_content"
+	           	    android:layout_height="wrap_content"
+	           	    android:layout_centerHorizontal="true"
+	           	    android:layout_below="@id/digitalskademeldingsskjema"
+	           	    android:text="Dette skademeldingskjemaet er en digital versjon som ved utfyllelse vil bli lagret påkonten din på vikingredning.no. Herfra kan du printe det og sende til forsikrings-selskapet. \n\nDet vil også bli sendt en kopi til e-post adressene som blir oppgitt i skjemaet."
+	           	   	android:textSize="15dp"
+	           	   	android:textColor="#fff"/>
+	           	 <no.incent.viking.widget.SwipeNavigation android:id="@+id/informasjon_nav"
+	           	    android:layout_width="wrap_content"
+	           	    android:layout_height="wrap_content"
+	           	    android:layout_centerHorizontal="true"
+	           	    android:layout_alignParentBottom="true"
+	           	    swipenav:navigation_type="right" />
+	        </RelativeLayout>
+	        
+	        <!-- Registration Number -->
+	        <RelativeLayout 
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:layout_gravity="center_horizontal">
+	            <TableLayout
+		            android:layout_width="wrap_content"
+		            android:layout_height="wrap_content"
+		            android:layout_marginTop="30dp"
+		            android:paddingLeft="20dp"
+		            android:paddingRight="20dp">
+		            <TableRow android:layout_marginBottom="25dp">
+		                <TextView 
+		                    android:layout_width="wrap_content"
+		                    android:layout_height="wrap_content"
+		                    android:layout_gravity="center_vertical"
+		                    android:layout_marginRight="20dp"
+		                    android:text="Kjøretøy A"
+		                    android:textColor="#ffffff"
+		                    android:layout_weight="0.4" />
+		                <LinearLayout
+		                    android:layout_width="wrap_content"
+		                    android:layout_height="wrap_content"
+		                    android:background="@drawable/licenseplate"
+		                    android:layout_weight="0.6">
+		                    <EditText android:id="@+id/registration_number"
+		                        android:layout_width="0dp"
+		                        android:layout_height="wrap_content"
+		                        android:layout_weight="1"
+		                        android:layout_gravity="center_vertical"
+		                        android:singleLine="true"
+		                        android:inputType="textCapCharacters"
+		                        android:gravity="center_horizontal"
+		                        android:background="#00000000"/>
+		                </LinearLayout>
+		            </TableRow>
+		            <TableRow>
+		                <TextView 
+		                    android:layout_width="wrap_content"
+		                    android:layout_height="wrap_content"
+		                    android:layout_gravity="center_vertical"
+		                    android:layout_marginRight="20dp"
+		                    android:text="Kjøretøy B"
+		                    android:textColor="#ffffff"
+		                    android:layout_weight="0.4" />
+		                <LinearLayout
+		                    android:layout_width="wrap_content"
+		                    android:layout_height="wrap_content"
+		                    android:background="@drawable/licenseplate"
+		                    android:layout_weight="0.6">
+		                    <EditText android:id="@+id/counterpart_registration_number"
+		                        android:layout_width="0dp"
+		                        android:layout_height="wrap_content"
+		                        android:layout_weight="1"
+		                        android:layout_gravity="center_vertical"
+		                        android:singleLine="true"
+		                        android:inputType="textCapCharacters"
+		                        android:gravity="center_horizontal"
+		                        android:background="#00000000"/>
+		                </LinearLayout>
+		            </TableRow>
+		        </TableLayout>
+		        <no.incent.viking.widget.SwipeNavigation android:id="@+id/registrationnumber_nav"
+	           	    android:layout_width="wrap_content"
+	           	    android:layout_height="wrap_content"
+	           	    android:layout_centerHorizontal="true"
+	           	    android:layout_alignParentBottom="true"
+	           	    android:layout_margin="20dp"
+	           	    swipenav:navigation_type="right" />
+	        </RelativeLayout>
+	        
+	        <!-- Damage Cause -->
+	        <RelativeLayout
+	            android:layout_width="fill_parent"
+	            android:layout_height="fill_parent">
+	            <LinearLayout 
+	                android:layout_width="fill_parent"
+	                android:layout_height="wrap_content"
+	                android:layout_marginTop="20dp"
+	                android:layout_centerHorizontal="true"
+	                android:orientation="vertical">
+	                <ListView android:id="@+id/damage_cause_list"
+	                    android:layout_width="fill_parent"
+	                    android:layout_height="wrap_content"
+	                    android:layout_marginLeft="20dp"
+	                    android:layout_marginRight="20dp"
+	                    android:layout_marginBottom="20dp"
+	                    android:layout_gravity="center_horizontal"
+	                    android:divider="@null" />
+	            </LinearLayout>
+	        </RelativeLayout>
+	        
+	        <!-- Damage -->
+	        <RelativeLayout
+	            android:layout_width="fill_parent"
+	            android:layout_height="fill_parent">
+	            <ScrollView
+	                android:layout_width="fill_parent"
+	                android:layout_height="fill_parent"
+	                android:fadingEdge="none">
+	                <LinearLayout
+	                    android:layout_width="fill_parent"
+	                    android:layout_height="wrap_content"
+	                    android:orientation="vertical">
+	                    <TableLayout
+			                android:layout_width="wrap_content"
+			                android:layout_height="wrap_content"
+			                android:layout_gravity="center_horizontal"
+			                android:layout_marginTop="20dp"
+			                android:paddingLeft="20dp"
+			                android:paddingRight="20dp">
+			                <TableRow android:layout_marginBottom="10dp">
+			                    <TextView
+			                        android:layout_width="wrap_content"
+			                        android:layout_height="wrap_content"
+			                        android:text="Skadedato"
+			                        android:textColor="#ffffff"
+			                        android:paddingRight="10dp"
+			                        android:layout_weight="0.4" />
+			                    <EditText android:id="@+id/damage_date"
+			                        android:layout_width="wrap_content"
+			                        android:layout_height="wrap_content"
+			                        android:layout_weight="0.6"
+			                        android:singleLine="true"
+			                        android:imeOptions="actionNext"
+			                        android:editable="false"
+			                        android:background="@drawable/damage_report_selector" />
+			                </TableRow>
+			                <TableRow android:layout_marginBottom="10dp">
+			                    <TextView
+			                        android:layout_width="wrap_content"
+			                        android:layout_height="wrap_content"
+			                        android:layout_weight="0.4"
+			                        android:text="Klokkeslett"
+			                        android:textColor="#ffffff"
+			                        android:paddingRight="10dp" />
+			                    <EditText android:id="@+id/damage_time"
+			                        android:layout_width="wrap_content"
+			                        android:layout_height="wrap_content"
+			                        android:layout_weight="0.6"
+			                        android:singleLine="true"
+			                        android:imeOptions="actionNext"
+			                        android:background="@drawable/damage_report_selector" />
+			                </TableRow>
+			                <TableRow android:layout_marginBottom="10dp">
+			                    <TextView
+			                        android:layout_width="wrap_content"
+			                        android:layout_height="wrap_content"
+			                        android:layout_weight="0.4"
+			                        android:text="Skadested"
+			                        android:textColor="#ffffff"
+			                        android:paddingRight="10dp" />
+			                    <EditText android:id="@+id/place_of_damage"
+			                        android:layout_width="wrap_content"
+			                        android:layout_height="wrap_content"
+			                        android:layout_weight="0.6"
+			                        android:singleLine="true"
+			                        android:imeOptions="actionNext"
+			                        android:background="@drawable/damage_report_selector" />
+			                </TableRow>
+			                <TableRow android:layout_marginBottom="10dp">
+			                    <TextView
+			                        android:layout_width="wrap_content"
+			                        android:layout_height="wrap_content"
+			                        android:layout_weight="0.4"
+			                        android:text="Ansvarlig"
+			                        android:textColor="#ffffff"
+			                        android:paddingRight="10dp" />
+			                    <RadioGroup android:id="@+id/about_damage_blame"
+		                            android:layout_width="wrap_content"
+		                            android:layout_height="wrap_content"
+		                            android:layout_weight="0.6"
+		                            android:orientation="horizontal">
+		                            <RadioButton android:id="@+id/blame_a"
+		                                android:layout_width="wrap_content"
+		                                android:layout_height="wrap_content"
+		                                android:paddingLeft="25dp"
+		                                android:paddingRight="20dp"
+		                                android:text="A"
+		                                android:button="@drawable/damage_checkbox_selector" 
+		                                android:checked="true"/>
+		                            <RadioButton android:id="@+id/blame_b"
+		                                android:layout_width="wrap_content"
+		                                android:layout_height="wrap_content"
+		                                android:paddingLeft="25dp"
+		                                android:text="B"
+		                                android:button="@drawable/damage_checkbox_selector" />
+		                        </RadioGroup>
+			                </TableRow>
+			                <TableRow android:layout_marginBottom="10dp">
+			                    <TextView
+			                        android:layout_width="wrap_content"
+			                        android:layout_height="wrap_content"
+			                        android:layout_weight="0.4"
+			                        android:text="Hastighet"
+			                        android:textColor="#ffffff"
+			                        android:paddingRight="10dp" />
+			                    <EditText android:id="@+id/speed_of_vehicle"
+			                        android:layout_width="wrap_content"
+			                        android:layout_height="wrap_content"
+			                        android:layout_weight="0.6"
+			                        android:singleLine="true"
+			                        android:imeOptions="actionNext"
+			                        android:background="@drawable/damage_report_selector" />
+			                </TableRow>
+			                <TableRow android:layout_marginBottom="10dp">
+			                    <TextView
+			                        android:layout_width="wrap_content"
+			                        android:layout_height="wrap_content"
+			                        android:layout_weight="0.4"
+			                        android:text="Politi"
+			                        android:textColor="#ffffff"
+			                        android:paddingRight="10dp" />
+			                    <RadioGroup android:id="@+id/police"
+		                            android:layout_width="wrap_content"
+		                            android:layout_height="wrap_content"
+		                            android:layout_weight="0.6"
+		                            android:orientation="horizontal" >
+		                            <RadioButton android:id="@+id/police_ja"
+		                                android:layout_width="wrap_content"
+		                                android:layout_height="wrap_content"
+		                                android:paddingLeft="25dp"
+		                                android:paddingRight="20dp"
+		                                android:text="Ja"
+		                                android:button="@drawable/damage_checkbox_selector"
+		                                android:checked="true" />
+		                            <RadioButton android:id="@+id/police_nei"
+		                                android:layout_width="wrap_content"
+		                                android:layout_height="wrap_content"
+		                                android:paddingLeft="25dp"
+		                                android:text="Nei"
+		                                android:button="@drawable/damage_checkbox_selector" />
+		                        </RadioGroup>
+			                </TableRow>
+			                <TableRow android:layout_marginBottom="10dp">
+			                    <TextView
+			                        android:layout_width="wrap_content"
+			                        android:layout_height="wrap_content"
+			                        android:layout_weight="0.4"
+			                        android:text="Bilrednings-firma"
+			                        android:textColor="#ffffff"
+			                        android:paddingRight="10dp" />
+			                    <EditText android:id="@+id/rescue_company"
+			                        android:layout_width="wrap_content"
+			                        android:layout_height="wrap_content"
+			                        android:layout_weight="0.6"
+			                        android:singleLine="true"
+			                        android:imeOptions="actionNext"
+			                        android:background="@drawable/damage_report_selector" />
+			                </TableRow>
+			                <TableRow android:layout_marginBottom="10dp">
+			                    <TextView
+			                        android:layout_width="wrap_content"
+			                        android:layout_height="wrap_content"
+			                        android:layout_weight="0.4"
+			                        android:text="Beskrivelse av hendelese"
+			                        android:textColor="#ffffff"
+			                        android:paddingRight="10dp" />
+			                    <EditText android:id="@+id/description_of_incident"
+			                        android:layout_width="wrap_content"
+			                        android:layout_height="50dp"
+			                        android:layout_weight="0.6"
+			                        android:singleLine="false"
+			                        android:gravity="top"
+			                        android:imeOptions="actionDone"
+			                        android:background="@drawable/damage_report_selector" />
+			                </TableRow>
+			            </TableLayout>
+			            <no.incent.viking.widget.SwipeNavigation android:id="@+id/damage_nav"
+					   	    android:layout_width="wrap_content"
+					   	    android:layout_height="wrap_content"
+					   	    android:layout_gravity="center_horizontal"
+					   	    android:layout_margin="20dp"
+					   	    swipenav:navigation_type="normal" />
+	                </LinearLayout>
+	            </ScrollView>
+	        </RelativeLayout>
+	        
+	        <!-- Personal Damage -->
+	        
+	        <RelativeLayout
+	            android:layout_width="fill_parent"
+	            android:layout_height="fill_parent">
+	            <RadioGroup android:id="@+id/personal_damage"
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:paddingTop="30dp"
+	            	android:paddingLeft="30dp">
+	                <RadioButton android:id="@+id/personal_damage_yes"
+		                android:layout_width="wrap_content"
+		                android:layout_height="wrap_content"
+		                android:button="@drawable/damage_checkbox_selector"
+		                android:text="Ja"
+		                android:textColor="#ffffff"
+		                android:checked="true" />
+	                <LinearLayout 
+	                    android:layout_width="wrap_content"
+	                    android:layout_height="wrap_content"
+	                    android:gravity="top">
+	                    <TextView
+	                        android:layout_width="wrap_content"
+	                        android:layout_height="wrap_content"
+	                        android:text="Navn:"
+	                        android:textColor="#ffffff"
+	                        android:layout_gravity="top"
+	                        android:paddingRight="20dp" />
+	                    <EditText android:id="@+id/persanal_damage_name"
+	                        android:layout_width="wrap_content"
+	                        android:layout_height="wrap_content"
+	                        android:background="@drawable/damage_report_selector" />
+	                </LinearLayout>
+	                <RadioButton android:id="@+id/personal_damage_no"
+		                android:layout_width="wrap_content"
+		                android:layout_height="wrap_content"
+		                android:button="@drawable/damage_checkbox_selector"
+		                android:text="Nei"
+		                android:textColor="#ffffff" />
+	                <LinearLayout 
+	                    android:layout_width="wrap_content"
+	                    android:layout_height="wrap_content"
+	                    android:gravity="top">
+	                    <TextView
+	                        android:layout_width="wrap_content"
+	                        android:layout_height="wrap_content"
+	                        android:text="Vitner"
+	                        android:textColor="#ffffff"
+	                        android:layout_gravity="top"
+	                        android:paddingRight="20dp" />
+	                    <EditText android:id="@+id/persanal_damage_witnesses"
+	                        android:layout_width="wrap_content"
+	                        android:layout_height="wrap_content"
+	                        android:background="@drawable/damage_report_selector" />
+	                </LinearLayout>
+	            </RadioGroup>
+	            <no.incent.viking.widget.SwipeNavigation android:id="@+id/personal_damage_nav"
+			   	    android:layout_width="wrap_content"
+			   	    android:layout_height="wrap_content"
+			   	    android:layout_centerHorizontal="true"
+			   	    android:layout_alignParentBottom="true"
+			   	    android:layout_margin="20dp"
+			   	    swipenav:navigation_type="normal" />
+	        </RelativeLayout>
+	        
+	        <!-- Pictures -->
+	        <RelativeLayout
+	            android:layout_width="fill_parent"
+	            android:layout_height="wrap_content"
+	            android:layout_marginTop="20dp">
+	            <GridView android:id="@+id/damage_pictures"
+	                android:layout_width="fill_parent"
+	                android:layout_height="wrap_content"
+	                android:numColumns="3"></GridView>
+	            <no.incent.viking.widget.SwipeNavigation android:id="@+id/damage_pictures_nav"
+			   	    android:layout_width="wrap_content"
+			   	    android:layout_height="wrap_content"
+			   	    android:layout_centerHorizontal="true"
+			   	    android:layout_alignParentBottom="true"
+			   	    swipenav:navigation_type="normal" />
+	        </RelativeLayout>
+	        
+	        <!-- Earlier Damage -->
+	        <RelativeLayout
+	            android:layout_width="fill_parent"
+	            android:layout_height="wrap_content">
+	            <RadioGroup android:id="@+id/earlier_damage"
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:paddingTop="30dp"
+	            	android:paddingLeft="30dp">
+	                <RadioButton android:id="@+id/earlier_damage_yes"
+		                android:layout_width="wrap_content"
+		                android:layout_height="wrap_content"
+		                android:button="@drawable/damage_checkbox_selector"
+		                android:text="Ja"
+		                android:textColor="#ffffff" 
+		                android:checked="true" />
+	                <LinearLayout 
+	                    android:layout_width="wrap_content"
+	                    android:layout_height="wrap_content"
+	                    android:gravity="top">
+	                    <TextView
+	                        android:layout_width="wrap_content"
+	                        android:layout_height="wrap_content"
+	                        android:text="Hvis ja:"
+	                        android:textColor="#ffffff"
+	                        android:gravity="top"
+	                        android:layout_gravity="top"
+	                        android:paddingRight="20dp" />
+	                    <EditText android:id="@+id/if_yes"
+	                        android:layout_width="170dp"
+	                        android:layout_height="70dp"
+	                        android:gravity="top"
+	                        android:background="@drawable/damage_report_selector" />
+	                </LinearLayout>
+	                <RadioButton android:id="@+id/earlier_damage_no"
+		                android:layout_width="wrap_content"
+		                android:layout_height="wrap_content"
+		                android:button="@drawable/damage_checkbox_selector"
+		                android:text="Nei"
+		                android:textColor="#ffffff" />
+	            </RadioGroup>
+	            <no.incent.viking.widget.SwipeNavigation android:id="@+id/earlier_damage_nav"
+			   	    android:layout_width="wrap_content"
+			   	    android:layout_height="wrap_content"
+			   	    android:layout_centerHorizontal="true"
+			   	    android:layout_alignParentBottom="true"
+			   	    swipenav:navigation_type="normal" />
+	        </RelativeLayout>
+	        
+	        <!-- Personal Info A -->
+	        
+	        <ScrollView
+           	    android:layout_width="fill_parent"
+           	    android:layout_height="fill_parent"
+           	    android:fadingEdge="none">
+	            <LinearLayout
+	                android:layout_width="fill_parent"
+	                android:layout_height="wrap_content"
+	                android:orientation="vertical">
+	                <TableLayout
+	           	        android:layout_width="wrap_content"
+	           	        android:layout_height="wrap_content"
+	           	        android:layout_gravity="center_horizontal"
+	           	        android:layout_marginTop="20dp">
+	           	        <TableRow android:layout_marginBottom="10dp">
+		                    <TextView
+		                        android:layout_width="wrap_content"
+		                        android:layout_height="wrap_content"
+		                        android:text="Fornavn"
+		                        android:textColor="#ffffff"
+		                        android:paddingRight="10dp" />
+		                    <EditText android:id="@+id/firstname"
+		                        android:layout_width="wrap_content"
+		                        android:layout_height="wrap_content"
+		                        android:singleLine="true"
+		                        android:inputType="textPersonName"
+		                        android:background="@drawable/damage_report_selector" />
+		                </TableRow>
+		                <TableRow android:layout_marginBottom="10dp">
+		                    <TextView
+		                        android:layout_width="wrap_content"
+		                        android:layout_height="wrap_content"
+		                        android:text="Etternavn"
+		                        android:textColor="#ffffff"
+		                        android:paddingRight="10dp" />
+		                    <EditText android:id="@+id/lastname"
+		                        android:layout_width="wrap_content"
+		                        android:layout_height="wrap_content"
+		                        android:singleLine="true"
+		                        android:inputType="textPersonName"
+		                        android:background="@drawable/damage_report_selector" />
+		                </TableRow>
+		                <TableRow android:layout_marginBottom="10dp">
+		                    <TextView
+		                        android:layout_width="wrap_content"
+		                        android:layout_height="wrap_content"
+		                        android:text="Addresse"
+		                        android:textColor="#ffffff"
+		                        android:paddingRight="10dp" />
+		                    <EditText android:id="@+id/address"
+		                        android:layout_width="wrap_content"
+		                        android:layout_height="wrap_content"
+		                        android:singleLine="true"
+		                        android:inputType="text"
+		                        android:background="@drawable/damage_report_selector" />
+		                </TableRow>
+		                <TableRow android:layout_marginBottom="10dp">
+		                    <TextView
+		                        android:layout_width="wrap_content"
+		                        android:layout_height="wrap_content"
+		                        android:text="Postnr/Sted"
+		                        android:textColor="#ffffff"
+		                        android:paddingRight="10dp" />
+		                    <EditText android:id="@+id/zipcity"
+		                        android:layout_width="wrap_content"
+		                        android:layout_height="wrap_content"
+		                        android:singleLine="true"
+		                        android:inputType="textPostalAddress"
+		                        android:background="@drawable/damage_report_selector" />
+		                </TableRow>
+		                <TableRow android:layout_marginBottom="10dp">
+		                    <TextView
+		                        android:layout_width="wrap_content"
+		                        android:layout_height="wrap_content"
+		                        android:text="Telefon privat"
+		                        android:textColor="#ffffff"
+		                        android:paddingRight="10dp" />
+		                    <EditText android:id="@+id/phone_number"
+		                        android:layout_width="wrap_content"
+		                        android:layout_height="wrap_content"
+		                        android:singleLine="true"
+		                        android:inputType="phone"
+		                        android:background="@drawable/damage_report_selector" />
+		                </TableRow>
+		                <TableRow android:layout_marginBottom="10dp">
+		                    <TextView
+		                        android:layout_width="wrap_content"
+		                        android:layout_height="wrap_content"
+		                        android:text="E-post"
+		                        android:textColor="#ffffff"
+		                        android:paddingRight="10dp" />
+		                    <EditText android:id="@+id/email"
+		                        android:layout_width="wrap_content"
+		                        android:layout_height="wrap_content"
+		                        android:singleLine="true"
+		                        android:inputType="textEmailAddress"
+		                        android:background="@drawable/damage_report_selector" />
+		                </TableRow>
+		                <TableRow android:layout_marginBottom="10dp">
+		                    <TextView
+		                        android:layout_width="wrap_content"
+		                        android:layout_height="wrap_content"
+		                        android:text="Forsikrings-selskap"
+		                        android:textColor="#ffffff"
+		                        android:paddingRight="10dp" />
+		                    <EditText android:id="@+id/insurance_company"
+		                        android:layout_width="wrap_content"
+		                        android:layout_height="wrap_content"
+		                        android:singleLine="true"
+		                        android:inputType="text"
+		                        android:background="@drawable/damage_report_selector" />
+		                </TableRow>
+		                <TableRow android:layout_marginBottom="10dp">
+		                    <TextView
+		                        android:layout_width="wrap_content"
+		                        android:layout_height="wrap_content"
+		                        android:text="Førers førerkortnr"
+		                        android:textColor="#ffffff"
+		                        android:paddingRight="10dp" />
+		                    <EditText android:id="@+id/driverlicenseno"
+		                        android:layout_width="wrap_content"
+		                        android:layout_height="wrap_content"
+		                        android:singleLine="true"
+		                        android:inputType="text"
+		                        android:background="@drawable/damage_report_selector" />
+		                </TableRow>
+	           	    </TableLayout>
+	           	    <no.incent.viking.widget.SwipeNavigation android:id="@+id/personal_info_a_nav"
+				   	    android:layout_width="wrap_content"
+				   	    android:layout_height="wrap_content"
+				   	    android:layout_gravity="center_horizontal"
+				   	    android:layout_margin="20dp"
+				   	    swipenav:navigation_type="normal" />
+	            </LinearLayout>
+           	</ScrollView>
+	        
+	        <!-- Counterpart Info -->
+	        <ScrollView
+	            android:layout_width="fill_parent"
+	            android:layout_height="fill_parent">
+	            <LinearLayout
+	                android:layout_width="fill_parent"
+	                android:layout_height="wrap_content"
+	                android:orientation="vertical">
+	                <TableLayout
+	           	        android:layout_width="wrap_content"
+	           	        android:layout_height="wrap_content"
+	           	        android:layout_gravity="center_horizontal"
+	           	        android:layout_marginTop="20dp">
+	           	        <TableRow android:layout_marginBottom="10dp">
+		                    <TextView
+		                        android:layout_width="wrap_content"
+		                        android:layout_height="wrap_content"
+		                        android:text="Fornavn"
+		                        android:textColor="#ffffff"
+		                        android:paddingRight="10dp" />
+		                    <EditText android:id="@+id/counterpart_firstname"
+		                        android:layout_width="wrap_content"
+		                        android:layout_height="wrap_content"
+		                        android:singleLine="true"
+		                        android:inputType="textPersonName"
+		                        android:background="@drawable/damage_report_selector" />
+		                </TableRow>
+		                <TableRow android:layout_marginBottom="10dp">
+		                    <TextView
+		                        android:layout_width="wrap_content"
+		                        android:layout_height="wrap_content"
+		                        android:text="Etternavn"
+		                        android:textColor="#ffffff"
+		                        android:paddingRight="10dp" />
+		                    <EditText android:id="@+id/counterpart_lastname"
+		                        android:layout_width="wrap_content"
+		                        android:layout_height="wrap_content"
+		                        android:singleLine="true"
+		                        android:inputType="textPersonName"
+		                        android:background="@drawable/damage_report_selector" />
+		                </TableRow>
+		                <TableRow android:layout_marginBottom="10dp">
+		                    <TextView
+		                        android:layout_width="wrap_content"
+		                        android:layout_height="wrap_content"
+		                        android:text="Addresse"
+		                        android:textColor="#ffffff"
+		                        android:paddingRight="10dp" />
+		                    <EditText android:id="@+id/counterpart_address"
+		                        android:layout_width="wrap_content"
+		                        android:layout_height="wrap_content"
+		                        android:singleLine="true"
+		                        android:inputType="text"
+		                        android:background="@drawable/damage_report_selector" />
+		                </TableRow>
+		                <TableRow android:layout_marginBottom="10dp">
+		                    <TextView
+		                        android:layout_width="wrap_content"
+		                        android:layout_height="wrap_content"
+		                        android:text="Postnr/Sted"
+		                        android:textColor="#ffffff"
+		                        android:paddingRight="10dp" />
+		                    <EditText android:id="@+id/counterpart_zipcity"
+		                        android:layout_width="wrap_content"
+		                        android:layout_height="wrap_content"
+		                        android:singleLine="true"
+		                        android:inputType="textPostalAddress"
+		                        android:background="@drawable/damage_report_selector" />
+		                </TableRow>
+		                <TableRow android:layout_marginBottom="10dp">
+		                    <TextView
+		                        android:layout_width="wrap_content"
+		                        android:layout_height="wrap_content"
+		                        android:text="Telefon privat"
+		                        android:textColor="#ffffff"
+		                        android:paddingRight="10dp" />
+		                    <EditText android:id="@+id/counterpart_phone_number"
+		                        android:layout_width="wrap_content"
+		                        android:layout_height="wrap_content"
+		                        android:singleLine="true"
+		                        android:inputType="phone"
+		                        android:background="@drawable/damage_report_selector" />
+		                </TableRow>
+		                <TableRow android:layout_marginBottom="10dp">
+		                    <TextView
+		                        android:layout_width="wrap_content"
+		                        android:layout_height="wrap_content"
+		                        android:text="E-post"
+		                        android:textColor="#ffffff"
+		                        android:paddingRight="10dp" />
+		                    <EditText android:id="@+id/counterpart_email"
+		                        android:layout_width="wrap_content"
+		                        android:layout_height="wrap_content"
+		                        android:singleLine="true"
+		                        android:inputType="textEmailAddress"
+		                        android:background="@drawable/damage_report_selector" />
+		                </TableRow>
+		                <TableRow android:layout_marginBottom="10dp">
+		                    <TextView
+		                        android:layout_width="wrap_content"
+		                        android:layout_height="wrap_content"
+		                        android:text="Forsikrings-selskap"
+		                        android:textColor="#ffffff"
+		                        android:paddingRight="10dp" />
+		                    <EditText android:id="@+id/counterpart_insurance_company"
+		                        android:layout_width="wrap_content"
+		                        android:layout_height="wrap_content"
+		                        android:singleLine="true"
+		                        android:inputType="text"
+		                        android:background="@drawable/damage_report_selector" />
+		                </TableRow>
+		                <TableRow android:layout_marginBottom="50dp">
+		                    <TextView
+		                        android:layout_width="wrap_content"
+		                        android:layout_height="wrap_content"
+		                        android:text="Førers førerkortnr"
+		                        android:textColor="#ffffff"
+		                        android:paddingRight="10dp" />
+		                    <EditText android:id="@+id/counterpart_driverlicenseno"
+		                        android:layout_width="wrap_content"
+		                        android:layout_height="wrap_content"
+		                        android:singleLine="true"
+		                        android:inputType="text"
+		                        android:background="@drawable/damage_report_selector" />
+		                </TableRow>
+	           	    </TableLayout>
+		            <ImageView android:id="@+id/save_damage_report"
+		                android:src="@drawable/save_send_btn"
+		                android:layout_width="wrap_content"
+		                android:layout_height="wrap_content"
+		                android:layout_gravity="center_horizontal"
+		                android:layout_marginBottom="20dp"
+		                android:background="#00000000" />
+	            </LinearLayout>
+	        </ScrollView>
+	        
+	    </ViewFlipper>
+	    <ProgressBar android:id="@+id/damage_report_loader"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_gravity="center"
+	        android:visibility="gone" />
+    </FrameLayout>
+</LinearLayout>

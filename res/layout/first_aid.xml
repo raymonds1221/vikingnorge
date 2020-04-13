@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+    <LinearLayout 
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/curtain_closed" />
+    <RelativeLayout 
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+        <TabHost android:id="@+id/firstaid_tabhost"
+	        android:layout_width="fill_parent"
+	        android:layout_height="wrap_content">
+	        <LinearLayout android:layout_width="fill_parent"
+	            android:layout_height="wrap_content"
+	            android:orientation="vertical">
+	            <TabWidget android:id="@android:id/tabs"
+	                android:layout_width="fill_parent"
+	                android:layout_height="wrap_content"/>
+	            <TextView
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:text="Førstehjelp"
+	                android:textSize="20sp"
+	                android:textStyle="bold"
+	                android:textColor="#ffffffff"
+	                android:paddingLeft="10dp"
+	                android:paddingTop="10dp" />
+	            <ImageButton android:id="@+id/close_firstaid"
+	                android:src="@drawable/dr_close_btn"
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:background="#00000000"
+	                android:onClick="onCloseDamageReportClicked"
+	                android:padding="10dp" />
+	            <ScrollView 
+	                android:layout_width="fill_parent"
+	                android:layout_height="fill_parent"
+	                android:layout_marginBottom="60dp"
+	                android:scrollbars="none"
+	                android:fadingEdge="none">
+	                <FrameLayout android:id="@android:id/tabcontent"
+		                android:layout_width="fill_parent"
+		                android:layout_height="fill_parent">
+		                <Gallery android:id="@+id/firstaid_redning"
+		                    android:layout_width="wrap_content"
+		                    android:layout_height="fill_parent"
+		                    android:layout_gravity="center_horizontal"
+		                    android:fadingEdge="none"
+		                    android:spacing="8dp" />
+		                <Gallery android:id="@+id/firstaid_varsling"
+		                    android:layout_width="wrap_content"
+		                    android:layout_height="fill_parent"
+		                    android:layout_gravity="center_horizontal"
+		                    android:fadingEdge="none"
+		                    android:spacing="8dp" />
+		                <Gallery android:id="@+id/firstaid_hlr"
+		                    android:layout_width="wrap_content"
+		                    android:layout_height="fill_parent"
+		                    android:layout_gravity="center_horizontal"
+		                    android:fadingEdge="none"
+		                    android:spacing="8dp" />
+		                <Gallery android:id="@+id/firstaid_ulykke"
+		                    android:layout_width="wrap_content"
+		                    android:layout_height="fill_parent"
+		                    android:layout_gravity="center_horizontal"
+		                    android:fadingEdge="none"
+		                    android:spacing="8dp" />
+		            </FrameLayout>
+	            </ScrollView>
+	            
+	        </LinearLayout>
+	    </TabHost>
+	    <ImageView 
+	        android:src="@drawable/firstaid_footer"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignParentBottom="true" />
+    </RelativeLayout>
+</LinearLayout>

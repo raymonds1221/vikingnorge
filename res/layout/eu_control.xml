@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/content_eucontrol"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:paddingBottom="50dp"
+    android:orientation="vertical">
+		<LinearLayout
+		    android:layout_width="fill_parent"
+		    android:layout_height="35dp"/>
+		<RelativeLayout 
+		    android:layout_width="fill_parent"
+		    android:layout_height="wrap_content"
+		    android:background="@drawable/header_bar">
+		    <TextView
+			    android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="Neste EU kontroll"
+				android:textSize="15dip"
+				android:textColor="#FFFFFFFF"
+				android:gravity="center"
+				android:layout_centerVertical="true"
+				android:layout_marginLeft="25dp" />
+			<ImageButton
+				android:id="@+id/change_car_btn"
+				android:src="@drawable/change_car_btn" 
+				android:background="#00000000"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_centerVertical="true"
+				android:layout_alignParentRight="true"
+				android:layout_marginRight="25dp" />
+		</RelativeLayout>
+		<ScrollView
+		    android:layout_width="fill_parent"
+		    android:layout_height="wrap_content">
+		    <LinearLayout
+		        android:layout_width="fill_parent"
+		        android:layout_height="wrap_content"
+		        android:orientation="vertical">
+		        <LinearLayout
+				    android:layout_width="wrap_content"
+				    android:layout_height="wrap_content"
+				    android:layout_marginTop="20dp"
+				    android:layout_gravity="center_horizontal"
+				    android:gravity="center"
+				    android:background="@drawable/licenseplate_big">
+		
+					<EditText
+					    android:id="@+id/license_plate"
+					    android:layout_width="0dp"
+					    android:layout_height="wrap_content"
+					    android:layout_weight="1"
+					    android:background="#00000000"
+					    android:gravity="center_horizontal"
+					    android:textColor="#000000"
+					    android:textSize="28dp"
+					    android:textStyle="bold"
+					    android:singleLine="true"
+					    android:imeOptions="actionSearch" />
+		
+				</LinearLayout>
+				<LinearLayout
+				    android:layout_width="fill_parent"
+				    android:layout_height="wrap_content"
+				    android:layout_marginTop="20dp"
+				    android:gravity="center">
+					<TextView android:id="@+id/eu_date"
+					    android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:textSize="120dp"
+						android:textColor="#000000"
+						android:textStyle="bold"
+						android:gravity="center"
+						android:background="@drawable/calendar"/>
+				</LinearLayout>
+				<LinearLayout
+				    android:layout_width="fill_parent"
+				    android:layout_height="wrap_content"
+				    android:gravity="center"
+				    android:orientation="horizontal">
+					<TextView android:id="@+id/eu_month"
+					    android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:textSize="14dp"
+						android:textColor="#FFFFFF"
+						android:textStyle="bold"
+						android:gravity="center"
+						android:background="@drawable/calendar_tab"
+						android:layout_marginRight="13dp"/>
+					<TextView android:id="@+id/eu_year"
+					    android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:textSize="14dp"
+						android:textColor="#FFFFFF"
+						android:textStyle="bold"
+						android:gravity="center"
+						android:background="@drawable/calendar_tab"
+						android:layout_marginLeft="13dp"/>
+				</LinearLayout>
+				<TextView
+					    android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_marginTop="10dp"
+						android:layout_marginLeft="35dp"
+						android:layout_marginRight="35dp"
+						android:text="Dette er siste frist for EU kontroll. Du kan få den utført tidligst for 4 måneder før siste frist."
+						android:textSize="14dp"
+						android:textColor="#FFFFFF"
+						/>
+		    </LinearLayout>
+		</ScrollView>
+</LinearLayout>

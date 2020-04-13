@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:paddingLeft="20dp"
+    android:paddingRight="20dp">
+    <TextView android:id="@+id/news_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Viking satser i Danmark"
+        android:textSize="18sp"
+        android:textColor="#ffffff" />
+    <TextView android:id="@+id/news_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="15.11.2011"
+        android:textColor="#808080" />
+    <TextView android:id="@+id/news_fulltext"
+	       android:layout_width="fill_parent"
+	       android:layout_height="wrap_content"
+	       android:textSize="16sp"
+	       android:textColor="#ffffff"/>
+    <View android:layout_width="0dp" android:layout_height="10dp" />
+</LinearLayout>

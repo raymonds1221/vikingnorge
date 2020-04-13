@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:layout_marginBottom="20dp"
+    android:orientation="vertical">
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:fadingEdge="none">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:orientation="vertical">
+            <TableLayout
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:paddingTop="20dp">
+	            <TableRow android:paddingBottom="10dp">
+	                <TextView
+	                    android:layout_width="wrap_content"
+	                    android:layout_height="wrap_content"
+	                    android:text="Fornavn"
+	                    android:textColor="#ffffff"
+	                    android:paddingRight="10dp" />
+	                <EditText android:id="@+id/profile_firstname"
+	                    android:layout_width="wrap_content"
+	                    android:layout_height="wrap_content"
+	                    android:singleLine="true"
+	                    android:imeOptions="actionNext"
+	                    android:background="@drawable/damage_report_selector" />
+	            </TableRow>
+	            <TableRow android:paddingBottom="10dp">
+	                <TextView
+	                    android:layout_width="wrap_content"
+	                    android:layout_height="wrap_content"
+	                    android:text="Etternavn"
+	                    android:textColor="#ffffff"
+	                    android:paddingRight="10dp" />
+	                <EditText android:id="@+id/profile_lastname"
+	                    android:layout_width="wrap_content"
+	                    android:layout_height="wrap_content"
+	                    android:singleLine="true"
+	                    android:imeOptions="actionNext"
+	                    android:background="@drawable/damage_report_selector" />
+	            </TableRow>
+	            <TableRow android:paddingBottom="10dp">
+	                <TextView
+	                    android:layout_width="wrap_content"
+	                    android:layout_height="wrap_content"
+	                    android:text="E-post"
+	                    android:textColor="#ffffff"
+	                    android:paddingRight="10dp" />
+	                <EditText android:id="@+id/profile_email"
+	                    android:layout_width="wrap_content"
+	                    android:layout_height="wrap_content"
+	                    android:singleLine="true"
+	                    android:imeOptions="actionNext"
+	                    android:background="@drawable/damage_report_selector" />
+	            </TableRow>
+	            <TableRow android:paddingBottom="10dp">
+	                <TextView
+	                    android:layout_width="wrap_content"
+	                    android:layout_height="wrap_content"
+	                    android:text="Adresse"
+	                    android:textColor="#ffffff"
+	                    android:paddingRight="10dp" />
+	                <EditText android:id="@+id/profile_address"
+	                    android:layout_width="wrap_content"
+	                    android:layout_height="wrap_content"
+	                    android:singleLine="true"
+	                    android:imeOptions="actionNext"
+	                    android:background="@drawable/damage_report_selector" />
+	            </TableRow>
+	            <TableRow android:paddingBottom="10dp">
+	                <TextView
+	                    android:layout_width="wrap_content"
+	                    android:layout_height="wrap_content"
+	                    android:text="Postnr."
+	                    android:textColor="#ffffff"
+	                    android:paddingRight="10dp" />
+	                <EditText android:id="@+id/profile_areacode"
+	                    android:layout_width="wrap_content"
+	                    android:layout_height="wrap_content"
+	                    android:singleLine="true"
+	                    android:imeOptions="actionNext"
+	                    android:background="@drawable/damage_report_selector" />
+	            </TableRow>
+	            <TableRow android:paddingBottom="10dp">
+	                <TextView
+	                    android:layout_width="wrap_content"
+	                    android:layout_height="wrap_content"
+	                    android:text="Poststed"
+	                    android:textColor="#ffffff"
+	                    android:paddingRight="10dp" />
+	                <EditText android:id="@+id/profile_area"
+	                    android:layout_width="wrap_content"
+	                    android:layout_height="wrap_content"
+	                    android:singleLine="true"
+	                    android:imeOptions="actionNext"
+	                    android:background="@drawable/damage_report_selector" />
+	            </TableRow>
+	            <TableRow android:paddingBottom="10dp">
+	                <TextView
+	                    android:layout_width="wrap_content"
+	                    android:layout_height="wrap_content"
+	                    android:text="Mobiltlf"
+	                    android:textColor="#ffffff"
+	                    android:paddingRight="10dp" />
+	                <EditText android:id="@+id/profile_mobile_number"
+	                    android:layout_width="wrap_content"
+	                    android:layout_height="wrap_content"
+	                    android:singleLine="true"
+	                    android:imeOptions="actionNext"
+	                    android:background="@drawable/damage_report_selector" />
+	            </TableRow>
+	            <TableRow android:paddingBottom="10dp">
+	                <TextView
+	                    android:layout_width="wrap_content"
+	                    android:layout_height="wrap_content"
+	                    android:text="Reg. nr."
+	                    android:textColor="#ffffff"
+	                    android:paddingRight="10dp" />
+	                <EditText android:id="@+id/profile_reg_no"
+	                    android:layout_width="wrap_content"
+	                    android:layout_height="wrap_content"
+	                    android:singleLine="true"
+	                    android:imeOptions="actionNext"
+	                    android:background="@drawable/damage_report_selector" />
+	            </TableRow>
+	            <TableRow android:paddingBottom="10dp">
+	                <TextView
+	                    android:layout_width="wrap_content"
+	                    android:layout_height="wrap_content"
+	                    android:text="Land"
+	                    android:textColor="#ffffff"
+	                    android:paddingRight="10dp" />
+	                <EditText android:id="@+id/profile_country"
+	                    android:layout_width="wrap_content"
+	                    android:layout_height="wrap_content"
+	                    android:singleLine="true"
+	                    android:imeOptions="actionNext"
+	                    android:background="@drawable/damage_report_selector" />
+	            </TableRow>
+	            <TableRow android:paddingBottom="10dp">
+	                <TextView
+	                    android:layout_width="wrap_content"
+	                    android:layout_height="wrap_content"
+	                    android:text="Kjønn"
+	                    android:textColor="#ffffff"
+	                    android:paddingRight="10dp" />
+	                <RadioGroup android:id="@+id/profile_gender"
+	                    android:layout_width="wrap_content"
+	                    android:layout_height="wrap_content"
+	                    android:orientation="horizontal">
+	                    <RadioButton android:id="@+id/profile_gender_male"
+	                        android:layout_width="wrap_content"
+	                        android:layout_height="wrap_content"
+	                        android:layout_marginRight="20dp"
+	                        android:text="Mann"
+	                        android:textSize="12sp"
+	                        android:button="@drawable/damage_checkbox_selector"
+	                        android:checked="true" />
+	                    <RadioButton android:id="@+id/profile_gender_female"
+	                        android:layout_width="wrap_content"
+	                        android:layout_height="wrap_content"
+	                        android:text="Kvinne"
+	                        android:textSize="12sp"
+	                        android:button="@drawable/damage_checkbox_selector" />
+	                </RadioGroup>
+	            </TableRow>
+	            <TableRow android:paddingBottom="10dp">
+	                <TextView
+	                    android:layout_width="wrap_content"
+	                    android:layout_height="wrap_content"
+	                    android:text="Fødselår"
+	                    android:textColor="#ffffff"
+	                    android:paddingRight="10dp" />
+	                <EditText android:id="@+id/profile_year_of_birth"
+	                    android:layout_width="wrap_content"
+	                    android:layout_height="wrap_content"
+	                    android:inputType="number"
+	                    android:singleLine="true"
+	                    android:imeOptions="actionDone"
+	                    android:background="@drawable/damage_report_selector" />
+	            </TableRow>
+	        </TableLayout>
+	        <View android:layout_width="0dp" android:layout_height="20dp" />
+	        <RelativeLayout 
+	            android:layout_width="fill_parent"
+	            android:layout_height="wrap_content">
+	            <ImageButton android:id="@+id/save_profile"
+	                android:src="@drawable/save_info"
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:background="#00000000" />
+	            <ImageButton android:id="@+id/abort_profile"
+	                android:src="@drawable/abort_info"
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:layout_alignParentRight="true"
+	                android:background="#00000000"
+	                android:onClick="backToOwnerInfo" />
+	        </RelativeLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

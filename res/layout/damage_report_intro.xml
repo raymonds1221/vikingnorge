@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:paddingLeft="20dp"
+    android:paddingRight="20dp"
+    android:paddingBottom="20dp"
+    android:orientation="vertical">
+  	<TextView android:id="@+id/digitalskademeldingsskjema"
+  	    android:layout_width="wrap_content"
+  	    android:layout_height="wrap_content"
+  	    android:layout_centerHorizontal="true"
+  	    android:text="Digitalt skademeldingsskjema"
+  	   	android:textSize="20sp"
+  	   	android:textColor="#fff"
+  	   	android:paddingBottom="20dp" />
+  	 <TextView
+  	    android:layout_width="wrap_content"
+  	    android:layout_height="wrap_content"
+  	    android:layout_centerHorizontal="true"
+  	    android:layout_below="@id/digitalskademeldingsskjema"
+  	    android:text="Dette skademeldingskjemaet er en digital versjon som ved utfyllelse vil bli lagret påkonten din på vikingredning.no. Herfra kan du printe det og sende til forsikrings-selskapet. \n\nDet vil også bli sendt en kopi til e-post adressene som blir oppgitt i skjemaet."
+  	   	android:textSize="15dp"
+  	   	android:textColor="#fff"/>
+  	 <ImageView
+        android:src="@drawable/nav_icon_right"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:paddingBottom="20dp" />
+</RelativeLayout>

@@ -1,0 +1,451 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:navdot="http://schemas.android.com/apk/res/no.incent.viking"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:layout_marginBottom="50dp"
+    android:orientation="vertical">
+    <RelativeLayout android:id="@+id/car_image_container"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content">
+		<LinearLayout 
+		    android:layout_width="fill_parent"
+		    android:layout_height="wrap_content"
+		    android:background="@drawable/car_img_frame"
+		    android:layout_centerHorizontal="true"
+		    android:orientation="vertical">
+		    <ViewFlipper android:id="@+id/car_image_flipper"
+		        android:layout_width="310dp"
+		        android:layout_height="150dp"
+		        android:layout_gravity="center_horizontal"
+		        android:layout_marginTop="5dp">
+		        <Gallery android:id="@+id/car_images_gallery"
+		            android:layout_width="wrap_content"
+		            android:layout_height="wrap_content"
+			        android:fadingEdge="none"
+			        android:spacing="10dp"/>
+		        <ProgressBar android:id="@+id/car_image_progress"
+		            android:layout_width="wrap_content"
+		            android:layout_height="wrap_content"
+		            android:layout_gravity="center_horizontal"
+		            android:layout_marginTop="60dp"
+		            style="@android:style/Widget.ProgressBar.Small.Inverse" />
+		    </ViewFlipper>
+		</LinearLayout>
+	    <ImageButton
+			android:id="@+id/edit_img_btn"
+			android:src="@drawable/edit_img_btn" 
+			android:background="#00000000"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:onClick="onEditImgBtnClick"
+			android:layout_alignParentLeft="true"
+			android:layout_alignParentTop="true"
+			android:layout_margin="10dp" />
+	    <ImageButton
+			android:id="@+id/edit_shared_car"
+			android:src="@drawable/edit_img_btn" 
+			android:background="#00000000"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:onClick="onEditImgBtnClick"
+			android:layout_alignParentLeft="true"
+			android:layout_alignParentTop="true"
+			android:layout_margin="10dp"
+			android:visibility="gone" />
+	    <ImageButton
+			android:id="@+id/share_car_btn"
+			android:src="@drawable/share_car_btn" 
+			android:background="#00000000"
+			android:layout_width='wrap_content'
+			android:layout_height="wrap_content"
+			android:onClick="onShareCarBtnClick"
+			android:layout_alignParentRight="true"
+			android:layout_alignParentTop="true"
+			android:layout_margin="10dp" />
+	</RelativeLayout>
+	<RelativeLayout 
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    android:layout_gravity="center">
+	    <no.incent.viking.widget.NavigationDots android:id="@+id/navigation_dots"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignParentRight="true"
+	        navdot:imageDotInActive="@drawable/nav_dot_inactive"
+	        navdot:imageDotActive="@drawable/nav_dot_active" />
+	    <LinearLayout
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:layout_centerHorizontal="true"
+		    android:background="@drawable/licenseplate">
+		    <EditText
+			    android:id="@+id/car_info_regno"
+			    android:layout_width="0dp"
+				android:layout_height="wrap_content"
+				android:layout_weight="1"
+				android:textSize="28dp"
+				android:textColor="#000000"
+				android:textStyle="bold"
+				android:gravity="center"
+				android:layout_gravity="center"
+				android:background="#00000000"
+				android:imeOptions="actionDone"
+				android:singleLine="true"
+				android:enabled="false" />
+		</LinearLayout>
+	</RelativeLayout>
+	
+	<ScrollView
+	    android:layout_width="fill_parent"
+    	android:layout_height="fill_parent"
+    	android:scrollbars="none">
+	    <LinearLayout 
+	        android:layout_width="fill_parent"
+	        android:layout_height="wrap_content">
+		        <TableLayout android:id="@+id/car_info_table"
+				    android:layout_width="fill_parent"
+				    android:layout_height="fill_parent"
+				    android:stretchColumns="1"
+				    android:layout_margin="10dp">
+				    <TableRow android:background="@drawable/table_top">"
+				        <TextView
+				            android:text="EIER"
+				            android:textSize="16dp"
+				            android:textColor="#808080"
+				            android:layout_margin="5dp"
+				            android:layout_gravity="center_vertical"
+				            android:layout_width="100dp"
+				            android:singleLine="true"  />
+				        <RelativeLayout 
+				            android:layout_width="fill_parent"
+				            android:layout_height="wrap_content"
+				            android:layout_column="1"
+				            android:layout_gravity="center">
+				            <TextView android:id="@+id/car_info_eier"
+				                android:layout_width="wrap_content"
+				                android:layout_height="wrap_content"
+					            android:textSize="16dp"
+					            android:textColor="#000000"
+					            android:layout_margin="5dp"
+					            android:layout_gravity="center_vertical"
+					            android:layout_alignParentLeft="true"
+					            android:layout_centerVertical="true" />
+				            <ImageView android:id="@+id/owner_info_btn"
+				                android:src="@drawable/owner_info_btn"
+				                android:layout_width="20dp"
+				                android:layout_height="20dp"
+				                android:layout_alignParentRight="true"
+				                android:layout_centerVertical="true"
+				                android:layout_marginRight="5dp"
+				                android:onClick="onCarOwnerInfoClicked" />
+				        </RelativeLayout>
+				    </TableRow>
+				    <TableRow android:background="@drawable/table_mid">
+				        <TextView
+				            android:text="CHASSIS NR."
+				            android:textSize="16dp"
+				            android:textColor="#808080"
+				            android:layout_margin="5dp"
+				            android:layout_gravity="center_vertical"
+				            android:layout_width="0dp"
+				            android:singleLine="true"  />
+				        <TextView android:id="@+id/car_info_chassis_number"
+				            android:layout_column="1"
+				            android:textSize="16dp"
+				            android:textColor="#000000"
+				            android:layout_margin="5dp"
+				            android:layout_gravity="center_vertical" />
+				    </TableRow>
+				    <TableRow android:background="@drawable/table_mid">
+				        <TextView
+				            android:text="Registrerings år"
+				            android:textSize="16dp"
+				            android:textColor="#808080"
+				            android:layout_margin="5dp"
+				            android:layout_gravity="center_vertical"
+				            android:layout_width="0dp"
+				            android:singleLine="true"  />
+				        <TextView android:id="@+id/car_info_reg_year"
+				            android:layout_column="1"
+				            android:textSize="16dp"
+				            android:textColor="#000000"
+				            android:layout_margin="5dp"
+				            android:layout_gravity="center_vertical" />
+				    </TableRow>
+				    <TableRow android:background="@drawable/table_mid">
+				        <TextView
+				            android:text="REG. DATO"
+				            android:textSize="16dp"
+				            android:textColor="#808080"
+				            android:layout_margin="5dp"
+				            android:layout_gravity="center_vertical"
+				            android:layout_width="0dp"
+				            android:singleLine="true"/>
+				        <TextView android:id="@+id/car_info_reg_norway"
+				            android:layout_column="1"
+				            android:textSize="16dp"
+				            android:textColor="#000000"
+				            android:layout_margin="5dp"
+				            android:layout_gravity="center_vertical" />
+				    </TableRow>
+				    <TableRow android:background="@drawable/table_mid">
+				        <TextView
+				            android:text="Merkekode"
+				            android:textSize="16dp"
+				            android:textColor="#808080"
+				            android:layout_margin="5dp"
+				            android:layout_gravity="center_vertical"
+				            android:layout_width="0dp"
+				            android:singleLine="true"  />
+				        <TextView android:id="@+id/car_info_brand_code"
+				            android:layout_column="1"
+				            android:textSize="16dp"
+				            android:textColor="#000000"
+				            android:layout_margin="5dp"
+				            android:layout_gravity="center_vertical" />
+				    </TableRow>
+				    <TableRow android:background="@drawable/table_mid">
+				        <TextView
+				            android:text="Bilmodell"
+				            android:textSize="16dp"
+				            android:textColor="#808080"
+				            android:layout_margin="5dp"
+				            android:layout_gravity="center_vertical"
+				            android:layout_width="0dp"
+				            android:singleLine="true"  />
+				        <TextView android:id="@+id/car_info_car_model"
+				            android:layout_column="1"
+				            android:textSize="16dp"
+				            android:textColor="#000000"
+				            android:layout_margin="5dp"
+				            android:layout_gravity="center_vertical" />
+				    </TableRow>
+				    <TableRow android:background="@drawable/table_mid">
+				        <TextView
+				            android:text="Motorytelse"
+				            android:textSize="16dp"
+				            android:textColor="#808080"
+				            android:layout_margin="5dp"
+				            android:layout_gravity="center_vertical"
+				            android:layout_width="0dp"
+				            android:singleLine="true"  />
+				        <TextView android:id="@+id/car_info_engine_performance"
+				            android:layout_column="1"
+				            android:textSize="16dp"
+				            android:textColor="#000000"
+				            android:layout_margin="5dp"
+				            android:layout_gravity="center_vertical" />
+				    </TableRow>
+				    <TableRow android:background="@drawable/table_mid">
+				        <TextView
+				            android:text="SLAGVOLUM"
+				            android:textSize="16dp"
+				            android:textColor="#808080"
+				            android:layout_margin="5dp"
+				            android:layout_gravity="center_vertical"
+				            android:layout_width="0dp"
+				            android:singleLine="true"  />
+				        <TextView android:id="@+id/car_info_displacement"
+				            android:layout_column="1"
+				            android:textSize="16dp"
+				            android:textColor="#000000"
+				            android:layout_margin="5dp"
+				            android:layout_gravity="center_vertical" />
+				    </TableRow>
+				    <TableRow android:background="@drawable/table_mid">
+				        <TextView
+				            android:text="DRIVSTOFF"
+				            android:textSize="16dp"
+				            android:textColor="#808080"
+				            android:layout_margin="5dp"
+				            android:layout_gravity="center_vertical"
+				            android:layout_width="0dp"
+				            android:singleLine="true"  />
+				        <TextView android:id="@+id/car_info_fuel_type"
+				            android:layout_column="1"
+				            android:textSize="16dp"
+				            android:textColor="#000000"
+				            android:layout_margin="5dp"
+				            android:layout_gravity="center_vertical" />
+				    </TableRow>
+				    <TableRow android:background="@drawable/table_mid">
+				        <TextView
+				            android:text="Lengde"
+				            android:textSize="16dp"
+				            android:textColor="#808080"
+				            android:layout_margin="5dp"
+				            android:layout_gravity="center_vertical"
+				            android:layout_width="0dp"
+				            android:singleLine="true"  />
+				        <TextView android:id="@+id/car_info_length"
+				            android:layout_column="1"
+				            android:textSize="16dp"
+				            android:textColor="#000000"
+				            android:layout_margin="5dp"
+				            android:layout_gravity="center_vertical" />
+				    </TableRow>
+				    <TableRow android:background="@drawable/table_mid">
+				        <TextView
+				            android:text="Bredde"
+				            android:textSize="16dp"
+				            android:textColor="#808080"
+				            android:layout_margin="5dp"
+				            android:layout_gravity="center_vertical"
+				            android:layout_width="0dp"
+				            android:singleLine="true"  />
+				        <TextView android:id="@+id/car_info_width"
+				            android:layout_column="1"
+				            android:textSize="16dp"
+				            android:textColor="#000000"
+				            android:layout_margin="5dp"
+				            android:layout_gravity="center_vertical" />
+				    </TableRow>
+				    <TableRow android:background="@drawable/table_mid">
+				        <TextView
+				            android:text="Egenvekt"
+				            android:textSize="16dp"
+				            android:textColor="#808080"
+				            android:layout_margin="5dp"
+				            android:layout_gravity="center_vertical"
+				            android:layout_width="0dp"
+				            android:singleLine="true"  />
+				        <TextView android:id="@+id/car_info_weight"
+				            android:layout_column="1"
+				            android:textSize="16dp"
+				            android:textColor="#000000"
+				            android:layout_margin="5dp"
+				            android:layout_gravity="center_vertical" />
+				    </TableRow>
+				    <TableRow android:background="@drawable/table_mid">
+				        <TextView
+				            android:text="Totalvekt"
+				            android:textSize="16dp"
+				            android:textColor="#808080"
+				            android:layout_margin="5dp"
+				            android:layout_gravity="center_vertical"
+				            android:layout_width="0dp"
+				            android:singleLine="true"  />
+				        <TextView android:id="@+id/car_info_total_weight"
+				            android:layout_column="1"
+				            android:textSize="16dp"
+				            android:textColor="#000000"
+				            android:layout_margin="5dp"
+				            android:layout_gravity="center_vertical" />
+				    </TableRow>
+				    <TableRow android:background="@drawable/table_mid">
+				        <TextView
+				            android:text="Farge"
+				            android:textSize="16dp"
+				            android:textColor="#808080"
+				            android:layout_margin="5dp"
+				            android:layout_gravity="center_vertical"
+				            android:layout_width="0dp"
+				            android:singleLine="true"  />
+				        <TextView android:id="@+id/car_info_colour"
+				            android:layout_column="1"
+				            android:textSize="16dp"
+				            android:textColor="#000000"
+				            android:layout_margin="5dp"
+				            android:layout_gravity="center_vertical" />
+				    </TableRow>
+				    <TableRow android:background="@drawable/table_mid">
+				        <TextView
+				            android:text="CO2 utslipp"
+				            android:textSize="16dp"
+				            android:textColor="#808080"
+				            android:layout_margin="5dp"
+				            android:layout_gravity="center_vertical"
+				            android:layout_width="0dp"
+				            android:singleLine="true"  />
+				        <TextView android:id="@+id/car_info_co2_emission"
+				            android:layout_column="1"
+				            android:textSize="16dp"
+				            android:textColor="#000000"
+				            android:layout_margin="5dp"
+				            android:layout_gravity="center_vertical" />
+				    </TableRow>
+				    <TableRow android:background="@drawable/table_mid">
+				        <TextView
+				            android:text="Std. dekk foran"
+				            android:textSize="16dp"
+				            android:textColor="#808080"
+				            android:layout_margin="5dp"
+				            android:layout_gravity="center_vertical"
+				            android:layout_width="0dp"
+				            android:singleLine="true"  />
+				        <TextView android:id="@+id/car_info_std_tire_front"
+				            android:layout_column="1"
+				            android:textSize="16dp"
+				            android:textColor="#000000"
+				            android:layout_margin="5dp"
+				            android:layout_gravity="center_vertical" />
+				    </TableRow>
+				    <TableRow android:background="@drawable/table_mid">
+				        <TextView
+				            android:text="Std. dekk bak"
+				            android:textSize="16dp"
+				            android:textColor="#808080"
+				            android:layout_margin="5dp"
+				            android:layout_gravity="center_vertical"
+				            android:layout_width="0dp"
+				            android:singleLine="true"  />
+				        <TextView android:id="@+id/car_info_std_tire_back"
+				            android:layout_column="1"
+				            android:textSize="16dp"
+				            android:textColor="#000000"
+				            android:layout_margin="5dp"
+				            android:layout_gravity="center_vertical" />
+				    </TableRow>
+				    <TableRow android:background="@drawable/table_mid">
+				        <TextView
+				            android:text="Drivende hjul"
+				            android:textSize="16dp"
+				            android:textColor="#808080"
+				            android:layout_margin="5dp"
+				            android:layout_gravity="center_vertical"
+				            android:layout_width="0dp"
+				            android:singleLine="true"  />
+				        <TextView android:id="@+id/car_info_driving_wheels"
+				            android:layout_column="1"
+				            android:textSize="16dp"
+				            android:textColor="#000000"
+				            android:layout_margin="5dp"
+				            android:layout_gravity="center_vertical" />
+				    </TableRow>
+				    <TableRow android:background="@drawable/table_mid">
+				        <TextView
+				            android:text="Tilhengervekt m/brems"
+				            android:textSize="16dp"
+				            android:textColor="#808080"
+				            android:layout_margin="5dp"
+				            android:layout_gravity="center_vertical"
+				            android:layout_width="0dp"
+				            android:singleLine="true"  />
+				        <TextView android:id="@+id/car_info_trailer_weight_with_brakes"
+				            android:layout_column="1"
+				            android:textSize="16dp"
+				            android:textColor="#000000"
+				            android:layout_margin="5dp"
+				            android:layout_gravity="center_vertical" />
+				    </TableRow>
+				    <TableRow android:background="@drawable/table_bottom">
+				        <TextView
+				            android:text="Tilhengervekt u/brems"
+				            android:textSize="16dp"
+				            android:textColor="#808080"
+				            android:layout_margin="5dp"
+				            android:layout_gravity="center_vertical"
+				            android:layout_width="0dp"
+				            android:singleLine="true"  />
+				        <TextView android:id="@+id/car_info_trailer_weight_without_brakes"
+				            android:layout_column="1"
+				            android:textSize="16dp"
+				            android:textColor="#000000"
+				            android:layout_margin="5dp"
+				            android:layout_gravity="center_vertical" />
+				    </TableRow>
+				</TableLayout>
+	    </LinearLayout>
+	</ScrollView>
+</LinearLayout>

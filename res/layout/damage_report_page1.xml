@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:paddingBottom="20dp">
+    <TableLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_centerHorizontal="true"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp">
+        <TableRow android:layout_marginBottom="25dp">
+            <TextView 
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginRight="20dp"
+                android:text="Kjøretøy A"
+                android:textColor="#ffffff"
+                android:layout_weight="0.4" />
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/licenseplate"
+                android:layout_weight="0.6">
+                <EditText android:id="@+id/registration_number"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_gravity="center_vertical"
+                    android:singleLine="true"
+                    android:inputType="textCapCharacters"
+                    android:gravity="center_horizontal"
+                    android:background="#00000000"/>
+            </LinearLayout>
+        </TableRow>
+        <TableRow>
+            <TextView 
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginRight="20dp"
+                android:text="Kjøretøy B"
+                android:textColor="#ffffff"
+                android:layout_weight="0.4" />
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/licenseplate"
+                android:layout_weight="0.6">
+                <EditText android:id="@+id/counterpart_registration_number"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_gravity="center_vertical"
+                    android:singleLine="true"
+                    android:inputType="textCapCharacters"
+                    android:gravity="center_horizontal"
+                    android:background="#00000000"/>
+            </LinearLayout>
+        </TableRow>
+    </TableLayout>
+    <ImageView
+        android:src="@drawable/nav_icon_right"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:paddingBottom="20dp" />
+</RelativeLayout>
